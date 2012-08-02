@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ZSI="http://www.zolera.com/schemas/ZSI/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <SOAP-ENV:Header xmlns:ns1="https://adwords.google.com/api/adwords/cm/v200909">
+  <ns1:RequestHeader>
+   <ns1:authToken>xxxxxx</ns1:authToken>
+   <ns1:developerToken>xxxxxx</ns1:developerToken>
+   <ns1:clientEmail>xxxxxx</ns1:clientEmail>
+   <ns1:userAgent>xxxxxx</ns1:userAgent>
+  </ns1:RequestHeader>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body xmlns:ns1="https://adwords.google.com/api/adwords/cm/v200909">
+  <ns1:get>
+   <ns1:selector/>
+  </ns1:get>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

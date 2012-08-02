@@ -1,0 +1,36 @@
+1.0.4:
+- Client: Altered HTTPTransport.call to support gzip compression.
+- Config: Removed all references to M2Crypto.
+          Added send_compressed and accept_compressed config values.
+- Parser: Removed all references to M2Crypto.
+- Server: Removed all references to M2Crypto.
+
+1.0.3:
+- Types [102]: Only cast type data to a string if it is not already a
+               basestring. Prevents encoding errors when casting unicode strings
+               to regular strings.
+
+1.0.2:
+- Client [43]: Moved __future__ import above other imports.
+- Types [36]: Moved __future__ import above other imports.
+- Server [43]: Moved __future__ import above other imports.
+
+1.0.1:
+- Client [502-505]: Added a __str__ function to the __Method class. A SOAP call
+                    was being made every time something called str() on an
+                    object of this class.
+
+1.0.0:
+- Namespaces [124-126]: Added JAXB namespace
+- XMLSchema [19, 678]: Added JAXB namespace as a recognized value.
+            [2864, 2871-2872]: Modified TypeDescriptionComponent class to define
+                               __new__ method instead of __init__. This removes
+                               the deprecation warning on calling
+                               tuple.__init__.
+- SOAPBuilder [137-140]: No longer always puts a newline after a method element.
+                         Will only put a newline if there is at least one arg or
+                         kw arg.
+              [584 and 590]: Passed the "typed" flag down instead of hardcoding
+                             it to 1.
+- Client [115-117, 160-193]: Added support for custom HTTP headers to SOAPpy's
+                             HTTPTransport.

@@ -1,0 +1,127 @@
+3.0.8:
+- Added shortcuts for importing Client classes into the adspygoogle module.
+  Where you previous had to use the following import -
+      from adspygoogle.adwords.AdWordsClient import AdWordsClient
+  you may now do the following -
+      from adspygoogle import AdWordsClient
+  The same style of import works for DfaClient and DfpClient.
+
+3.0.7:
+- Patched MessageHandler's PackForSoappy function to no longer treat strings and
+  unicode strings the same way.
+
+3.0.6:
+- Added a patch to MessageHandler's _RestoreListTypesForResponse function. It
+  will now check any returned object for a field ending with ".Type" and use
+  this field as the class name when restoring list types.
+
+3.0.5:
+- Added support for SSL certificate verification through the Client's "ca_certs"
+  property. Please see our README.Common file for instructions.
+- Added support for HTTP message compression with SOAPpy.
+- Added "compress" property to the Client which can set HTTP compression on/off.
+- Updated SOAPpy patch to version 1.0.4. This fixes issue 8.
+
+3.0.4:
+- Updated SOAPpy patch to version 1.0.3. This fixes issue 13.
+
+3.0.3:
+- Modified GenericApiService to treat SOAP parameter element names as string
+  types rather than unicode types. These element names are used as keyword
+  argument keys and the ability to use unicode keys in keyword arguments only
+  exists in Python 2.6.5+. This fixes issue 9.
+
+3.0.2:
+- Updated the SOAPpy.patch file to version 1.0.1. Added an explicit __str__
+  function to SOAPpy.Client.__Method to prevent odd behavior when the str()
+  function was called on an object of this class. This addresses issue 6.
+
+3.0.1:
+- Modified MessageHandler to not pack items that evaluate to False into SOAP
+  requests.
+
+3.0.0:
+- Removed support for ZSI.
+- Added patched version of SOAPpy as sole supported SOAP toolkit.
+- Removed ApiService and WebService classes in favor of joint GenericApiService
+  class.
+
+2.2.1:
+- Addressing AdWords issue 164 (cannot use super with Exception in Python 2.4).
+
+2.2.0:
+- SOAPpy will now transform xsd:dateTime and xsd:float values into strings
+  before returning them from a SOAP response. Previously, they were returned as
+  6-item tuples and floats, respectively.
+
+2.1.0:
+- Altering the way ZSI handles elements that are not present in the response.
+  Moving forward, if an object is not present (i.e. ZSI stores None in the
+  generated class's field), we will no longer include it in the dictionary
+  returned from an API call.  Previously, it would include the field as a key
+  with '' (empty string) as the value.
+
+2.0.0:
+- Added scripts to generate pickled dictionaries representing the WSDL.
+- Added the ability to validate types against the WSDL.
+- Added ZSI Transformation layer to automatically turn python objects into ZSI-
+  compatible form.
+- Reworked SanityCheck and SOAPpy MessageHandler to take advantage of the WSDL
+  definitions.
+
+1.1.7:
+- Added support for complex SOAP headers.
+
+1.1.6:
+- Update Utils.GetUniqueName() to support name length. Reverted how construction
+  of the unique name is done to make it more random for names with shorter
+  length.
+
+1.1.5:
+- Added Utils.GetDictFromCsvFile() method.
+- Patch to pack NoneTypes as 'xsi3:nil="true"' in SOAPpy
+- Patch for allowing use of data injecting with SOAPpy regardless of whether a
+  service uses WSSE or JAXB.
+
+1.1.4:
+- Patch for BaseException.message deprecation warning in Python 2.6.
+- Patch for recognizing _xmlplus in SoapBuffer.
+
+1.1.3:
+- Patch to escape special HTML characters for all values in SOAPpy.
+
+1.1.2:
+- Patched handling of the local paths on Windows in Utils.GetDataFromCsvFile()
+  (Fixes issue 136).
+- Patched support for properly setting xml_parser in Client.__SetXmlParser().
+- Patched support for ETREE, when ZSI is used (Fixes issue 132).
+
+1.1.1:
+- Reworked Utils.GetDataFromCsvFile() to support CSVs located remotely.
+- Patched SoapBuffer.py to check on the right values for XML parsing
+  modules (Fixes issue 131).
+
+1.1.0:
+- Added support for HTTP proxy in AuthToken (Fixes issue 122).
+
+1.0.3:
+- Patch for parsing/injecting SOAP XML messages in "SoapBuffer.py", catches
+  NoneType.
+- Added Utils.GetDictFromMap() method.
+
+1.0.2:
+- Patch for Utils.HtmlEscape().
+
+1.0.1:
+- Patch to support WSSE headers.
+- Mask for 'Password' header.
+- Added support to handle SOAPpy's ArrayType.
+- Updated PackDictAsXml() in adspygoogle.common.soappy to be less restrictive.
+
+1.0.0:
+- Initial release.
+- Added support for raw debug.
+- Added support for sending and recieving compressed data when ZSI is in use
+  (Fixes issue 102).
+- Added automatic way of loading error types.
+- Improved the way fault object is generated.

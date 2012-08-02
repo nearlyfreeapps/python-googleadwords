@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>adspygoogle.adwords.ReportDownloader.ReportDownloader</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="adspygoogle-module.html">Package&nbsp;adspygoogle</a> ::
+        <a href="adspygoogle.adwords-module.html">Package&nbsp;adwords</a> ::
+        <a href="adspygoogle.adwords.ReportDownloader-module.html">Module&nbsp;ReportDownloader</a> ::
+        Class&nbsp;ReportDownloader
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ReportDownloader</h1><p class="nomargin-top"><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">ReportDownloader</strong>
+</pre>
+
+<hr />
+<p>Utility class that downloads reports.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">headers</span>,
+        <span class="summary-sig-arg">config</span>,
+        <span class="summary-sig-arg">op_config</span>,
+        <span class="summary-sig-arg">logger</span>)</span><br />
+      Inits ReportDownloader.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#DownloadReport" class="summary-sig-name">DownloadReport</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_definition_or_id</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">file_path</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads a report by object or id.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.DownloadReport">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#DownloadReportWithAwql" class="summary-sig-name">DownloadReportWithAwql</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_query</span>,
+        <span class="summary-sig-arg">download_format</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">file_path</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads a report with AWQL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.DownloadReportWithAwql">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__DownloadAdHocReport" class="summary-sig-name" onclick="show_private();">__DownloadAdHocReport</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_definition</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads an AdHoc report.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadAdHocReport">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__DownloadAdHocReportWithAwql" class="summary-sig-name" onclick="show_private();">__DownloadAdHocReportWithAwql</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_query</span>,
+        <span class="summary-sig-arg">download_format</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads an AdHoc report with AWQL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadAdHocReportWithAwql">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__DownloadReport" class="summary-sig-name" onclick="show_private();">__DownloadReport</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_payload</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads an AdHoc report for the specified payload.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadReport">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__GetReportXml" class="summary-sig-name" onclick="show_private();">__GetReportXml</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report</span>)</span><br />
+      Transforms the report object into xml.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GetReportXml">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__RemoveAttributes" class="summary-sig-name" onclick="show_private();">__RemoveAttributes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_xml</span>)</span><br />
+      Removes all attributes from tags.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__RemoveAttributes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__DownloadReportById" class="summary-sig-name" onclick="show_private();">__DownloadReportById</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_definition_id</span>,
+        <span class="summary-sig-arg">return_micros</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Download report and return raw data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadReportById">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__GenerateUrl" class="summary-sig-name" onclick="show_private();">__GenerateUrl</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">report_definition_id</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Generates the URL to get a report from.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GenerateUrl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__GenerateHeaders" class="summary-sig-name" onclick="show_private();">__GenerateHeaders</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">return_micros</span>,
+        <span class="summary-sig-arg">url</span>)</span><br />
+      Generates the headers to use for the report download.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GenerateHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__MakeRequest" class="summary-sig-name" onclick="show_private();">__MakeRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">headers</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">fileobj</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">payload</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Performs an HTTPS request and slightly processes the response.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__MakeRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__ReloadAuthToken"></a><span class="summary-sig-name">__ReloadAuthToken</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Ensures we have a valid auth_token in our headers.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__ReloadAuthToken">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__DumpToFile" class="summary-sig-name" onclick="show_private();">__DumpToFile</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>,
+        <span class="summary-sig-arg">fileobj</span>)</span><br />
+      Reads from response.read() and writes to fileobj.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DumpToFile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__LogRequest" class="summary-sig-name" onclick="show_private();">__LogRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">xml_log_data</span>)</span><br />
+      Logs the Report Download request.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__LogRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__GetLogHandlers" class="summary-sig-name" onclick="show_private();">__GetLogHandlers</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Gets a list of log handlers for the AdWords library.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GetLogHandlers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__CreateXmlLogData" class="summary-sig-name" onclick="show_private();">__CreateXmlLogData</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">start_time</span>,
+        <span class="summary-sig-arg">end_time</span>,
+        <span class="summary-sig-arg">request_url</span>,
+        <span class="summary-sig-arg">request_headers</span>,
+        <span class="summary-sig-arg">payload</span>,
+        <span class="summary-sig-arg">response_code</span>,
+        <span class="summary-sig-arg">response_headers</span>)</span><br />
+      Transforms arguments into a string to log.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__CreateXmlLogData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__SerializeRequestHeaders" class="summary-sig-name" onclick="show_private();">__SerializeRequestHeaders</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">request_headers</span>)</span><br />
+      Serializes the request headers into a string for logging.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__SerializeRequestHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.adwords.ReportDownloader.ReportDownloader-class.html#__SerializeResponseHeaders" class="summary-sig-name" onclick="show_private();">__SerializeResponseHeaders</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response_headers</span>)</span><br />
+      Serializes the response headers.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__SerializeResponseHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">headers</span>,
+        <span class="sig-arg">config</span>,
+        <span class="sig-arg">op_config</span>,
+        <span class="sig-arg">logger</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Inits ReportDownloader.
+
+Args:
+  headers: dict Dictionary object with populated authentication
+           credentials.
+  config: dict Dictionary object with populated configuration values.
+  op_config: dict Dictionary object with additional configuration values for
+             this operation.
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DownloadReport"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">DownloadReport</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_definition_or_id</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">file_path</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.DownloadReport">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Downloads a report by object or id.
+
+Args:
+  report_definition_or_id: dict or str Report or reportDefinitionId.
+  return_micros: bool Whether to return currency in micros (optional).
+  file_path: str File path to download to (optional).
+  fileobj: file An already-open file-like object that supports write()
+           (optional).
+
+Returns:
+  str Report data if file_path and fileobj are None, None if fileobj is
+      not None and file_path otherwise.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="DownloadReportWithAwql"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">DownloadReportWithAwql</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_query</span>,
+        <span class="sig-arg">download_format</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">file_path</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.DownloadReportWithAwql">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Downloads a report with AWQL.
+
+Args:
+  report_query: str AWQL for the report.
+  download_format: str Download format. E.g. CSV, TSV, XML.
+  return_micros: bool Whether to return currency in micros (optional).
+  file_path: str File path to download to (optional).
+  fileobj: file An already-open file-like object that supports write()
+           (optional).
+
+Returns:
+  str Report data if file_path and fileobj are None, None if fileobj is
+      not None and file_path otherwise.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__DownloadAdHocReport"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__DownloadAdHocReport</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_definition</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadAdHocReport">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Downloads an AdHoc report.
+
+Args:
+  report_definition: dict Report to download.
+  return_micros: bool Whether to return currency in micros (optional).
+  fileobj: file File to write to (optional).
+
+Returns:
+  str Report data if no fileobj, otherwise None.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__DownloadAdHocReportWithAwql"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__DownloadAdHocReportWithAwql</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_query</span>,
+        <span class="sig-arg">download_format</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadAdHocReportWithAwql">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Downloads an AdHoc report with AWQL.
+
+Args:
+  report_query: str AWQL to download a report for.
+  download_format: str Format of the report download.
+  return_micros: bool Whether to return currency in micros (optional).
+  fileobj: file File to write to (optional).
+
+Returns:
+  str Report data if no fileobj, otherwise None.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__DownloadReport"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__DownloadReport</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_payload</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadReport">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Downloads an AdHoc report for the specified payload.
+
+Args:
+  report_payload: str Report payload to POST to the server.
+  return_micros: bool Whether to return currency in micros (optional).
+  fileobj: file File to write to (optional).
+
+Returns:
+  str Report data if no fileobj, otherwise None.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__GetReportXml"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__GetReportXml</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GetReportXml">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Transforms the report object into xml.
+
+Args:
+  report: dict ReportDefinition object to turn to xml.
+
+Returns:
+  str ReportDefinition XML.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__RemoveAttributes"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__RemoveAttributes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_xml</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__RemoveAttributes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Removes all attributes from tags.
+
+Args:
+  report_xml: str xml to remove attributes from.
+
+Returns:
+  str Report xml with attributes removed.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__DownloadReportById"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__DownloadReportById</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_definition_id</span>,
+        <span class="sig-arg">return_micros</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DownloadReportById">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Download report and return raw data.
+
+Args:
+  report_definition_id: str Id of the report definition to download.
+  return_micros: bool Whether to return currency in micros.
+  fileobj: str Path to download file to.
+
+Returns:
+  str Report data if no fileobj, otherwise None.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__GenerateUrl"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__GenerateUrl</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">report_definition_id</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GenerateUrl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Generates the URL to get a report from.
+
+Args:
+  report_definition_id: int ID of the report to download.
+
+Returns:
+  str url to request
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__GenerateHeaders"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__GenerateHeaders</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">return_micros</span>,
+        <span class="sig-arg">url</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GenerateHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Generates the headers to use for the report download.
+
+Args:
+  return_micros: bool whether or not to use micros for money.
+  url: str URL the report will be downloaded from, needed if OAuth is
+       enabled.
+
+Returns:
+  dict Dictionary containing all the headers for the request
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__MakeRequest"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__MakeRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">url</span>,
+        <span class="sig-arg">headers</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">fileobj</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">payload</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__MakeRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Performs an HTTPS request and slightly processes the response.
+
+If fileobj is provided, saves the body to file instead of including it
+in the return value.
+
+Args:
+  url: str Resource for the request line.
+  headers: dict Headers to send along with the request.
+  fileobj: file File to save to (optional).
+  payload: str Xml to POST (optional).
+
+Returns:
+  str Report data as a string if fileobj=None, otherwise None
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__DumpToFile"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__DumpToFile</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>,
+        <span class="sig-arg">fileobj</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__DumpToFile">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Reads from response.read() and writes to fileobj.
+
+Args:
+ response: file Some object that supports read().
+ fileobj: file Some object that supports write()
+
+Returns:
+ number Number of bytes written.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__LogRequest"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__LogRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">xml_log_data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__LogRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Logs the Report Download request.
+
+Args:
+  xml_log_data: str Data to log for this request.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__GetLogHandlers"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__GetLogHandlers</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__GetLogHandlers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets a list of log handlers for the AdWords library.
+
+Returns:
+  list Log handlers for the AdWords library.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__CreateXmlLogData"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__CreateXmlLogData</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">start_time</span>,
+        <span class="sig-arg">end_time</span>,
+        <span class="sig-arg">request_url</span>,
+        <span class="sig-arg">request_headers</span>,
+        <span class="sig-arg">payload</span>,
+        <span class="sig-arg">response_code</span>,
+        <span class="sig-arg">response_headers</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__CreateXmlLogData">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Transforms arguments into a string to log.
+
+Args:
+  start_time: str Formatted start time.
+  end_time: str Formatted end time.
+  request_url: str URL POSTed to.
+  request_headers: dict Request headers sent with request.
+  payload: str Payload (http request body).
+  response_code: int Response code from remote server.
+  response_headers: list List of string headers received.
+
+Returns:
+  str Data to log.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__SerializeRequestHeaders"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__SerializeRequestHeaders</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">request_headers</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__SerializeRequestHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Serializes the request headers into a string for logging.
+
+Returns each key-&gt;value pair as &quot;key: value&quot; with newlines separating them.
+
+Args:
+  request_headers: dict Dictionary of headers to serialize.
+
+Returns:
+  str Serialized request headers.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__SerializeResponseHeaders"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__SerializeResponseHeaders</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response_headers</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.adwords.ReportDownloader-pysrc.html#ReportDownloader.__SerializeResponseHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Serializes the response headers.
+
+Headers are already formatted, this joins them into a single string.
+
+Args:
+  response_headers: list List of string headers received.
+
+Returns:
+  str Serialized response headers.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

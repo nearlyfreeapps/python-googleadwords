@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+>
+<SOAP-ENV:Header>
+<developerToken xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</developerToken>
+<clientEmail xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</clientEmail>
+<clientCustomerId xsi:type="xsd:string" SOAP-ENC:root="1"></clientCustomerId>
+<email xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</email>
+<password xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</password>
+<applicationToken xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</applicationToken>
+<useragent xsi:type="xsd:string" SOAP-ENC:root="1">xxxxxx</useragent>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<getAccountInfo SOAP-ENC:root="1">
+</getAccountInfo>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

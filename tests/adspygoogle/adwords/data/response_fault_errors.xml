@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Header>
+  <responseTime soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v13">98</responseTime>
+  <operations soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v13">1</operations>
+  <units soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v13">1</units>
+  <requestId soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v13">3d2a372824236cac06f0e361f1945524</requestId>
+ </soapenv:Header>
+ <soapenv:Body>
+  <soapenv:Fault>
+   <faultcode>soapenv:Server.userException</faultcode>
+   <faultstring>One or more input elements failed validation.</faultstring>
+   <detail>
+    <ns1:fault xmlns:ns1="https://adwords.google.com/api/adwords/v13">
+     <ns1:code>122</ns1:code>
+     <ns1:message>One or more input elements failed validation.</ns1:message>
+     <ns1:errors>
+      <ns1:index>0</ns1:index>
+      <ns1:field>headline</ns1:field>
+      <ns1:textIndex>17</ns1:textIndex>
+      <ns1:textLength>5</ns1:textLength>
+      <ns1:trigger>Mars!</ns1:trigger>
+      <ns1:code>121</ns1:code>
+      <ns1:isExemptable>true</ns1:isExemptable>
+      <ns1:detail>nonstandard_punctuation</ns1:detail>
+     </ns1:errors>
+     <ns1:errors>
+      <ns1:index>0</ns1:index>
+      <ns1:field>description2</ns1:field>
+      <ns1:textIndex>0</ns1:textIndex>
+      <ns1:textLength>31</ns1:textLength>
+      <ns1:trigger>Low-gravity fun for EVERYONE!!!</ns1:trigger>
+      <ns1:code>121</ns1:code>
+      <ns1:isExemptable>true</ns1:isExemptable>
+      <ns1:detail>This ad requires review before it can run.</ns1:detail>
+     </ns1:errors>
+     <ns1:errors>
+      <ns1:index>0</ns1:index>
+      <ns1:field>description2</ns1:field>
+      <ns1:textIndex>20</ns1:textIndex>
+      <ns1:textLength>11</ns1:textLength>
+      <ns1:trigger>EVERYONE!!!</ns1:trigger>
+      <ns1:code>121</ns1:code>
+      <ns1:isExemptable>true</ns1:isExemptable>
+      <ns1:detail>nonstandard_punctuation</ns1:detail>
+     </ns1:errors>
+     <ns1:errors>
+      <ns1:index>0</ns1:index>
+      <ns1:field>description2</ns1:field>
+      <ns1:textIndex>28</ns1:textIndex>
+      <ns1:textLength>3</ns1:textLength>
+      <ns1:trigger>!!!</ns1:trigger>
+      <ns1:code>121</ns1:code>
+      <ns1:isExemptable>true</ns1:isExemptable>
+      <ns1:detail>nonstandard_punctuation</ns1:detail>
+     </ns1:errors>
+    </ns1:fault>
+   </detail>
+  </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>

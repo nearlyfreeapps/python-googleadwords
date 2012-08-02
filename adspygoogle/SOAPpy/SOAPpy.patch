@@ -1,0 +1,318 @@
+diff -Naurb Client.py Client.py
+--- Client.py	2011-12-16 10:38:29.757745000 -0500
++++ Client.py	2011-12-16 10:34:46.202013000 -0500
+@@ -40,12 +40,14 @@
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
++
+ ident = '$Id: Client.py,v 1.27 2005/02/21 20:27:09 warnes Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+-
+ #import xml.sax
++import gzip
++import StringIO
+ import urllib
+ from types import *
+ import re
+@@ -65,7 +67,7 @@
+ 
+ 
+ def SOAPUserAgent():
+-    return "SOAPpy " + __version__ + " (pywebsvcs.sf.net)"
++    return "SOAPpy " + __version__ + " (pywebsvcs.sf.net),gzip"
+ 
+ 
+ class SOAPAddress:
+@@ -112,6 +114,9 @@
+ 
+ 
+ class HTTPTransport:
++    def __init__(self, additional_headers = None):
++        self.additional_headers = additional_headers or {}
++
+     def getNS(self, original_namespace, data):
+         """Extract the (possibly extended) namespace from the returned
+         SOAP message."""
+@@ -135,6 +140,24 @@
+         if not isinstance(addr, SOAPAddress):
+             addr = SOAPAddress(addr, config)
+ 
++        if config.send_compressed:
++          self.additional_headers['Content-Encoding'] = 'gzip'
++          buffer = StringIO.StringIO()
++          gzip_file = gzip.GzipFile(mode='wb', fileobj=buffer)
++          gzip_file.write(data)
++          gzip_file.close()
++          transport_data = buffer.getvalue()
++        else:
++          if 'Content-Encoding' in self.additional_headers:
++              del self.additional_headers['Content-Encoding']
++          transport_data = data
++
++        if config.accept_compressed:
++            self.additional_headers['Accept-Encoding'] = 'gzip'
++        else:
++            if 'Accept-Encoding' in self.additional_headers:
++                del self.additional_headers['Accept-Encoding']
++
+         # Build a request
+         if http_proxy:
+             real_addr = http_proxy
+@@ -153,37 +176,40 @@
+ 
+         r.putrequest("POST", real_path)
+ 
+-        r.putheader("Host", addr.host)
+-        r.putheader("User-agent", SOAPUserAgent())
++        headers = []
++
++        headers.append(("Host", addr.host))
++        headers.append(("User-agent", SOAPUserAgent()))
+         t = 'text/xml';
+         if encoding != None:
+             t += '; charset="%s"' % encoding
+-        r.putheader("Content-type", t)
+-        r.putheader("Content-length", str(len(data)))
++        headers.append(("Content-type", t))
++        headers.append(("Content-length", str(len(transport_data))))
+ 
+         # if user is not a user:passwd format
+         #    we'll receive a failure from the server. . .I guess (??)
+         if addr.user != None:
+             val = base64.encodestring(addr.user) 
+-            r.putheader('Authorization','Basic ' + val.replace('\012',''))
++            headers.append(('Authorization','Basic ' + val.replace('\012','')))
++
++        headers.extend(self.additional_headers.items())
+ 
+         # This fixes sending either "" or "None"
+         if soapaction == None or len(soapaction) == 0:
+-            r.putheader("SOAPAction", "")
++            headers.append(("SOAPAction", ""))
+         else:
+-            r.putheader("SOAPAction", '"%s"' % soapaction)
++            headers.append(("SOAPAction", '"%s"' % soapaction))
+ 
+         if config.dumpHeadersOut:
+             s = 'Outgoing HTTP headers'
+             debugHeader(s)
+             print "POST %s %s" % (real_path, r._http_vsn_str)
+-            print "Host:", addr.host
+-            print "User-agent: SOAPpy " + __version__ + " (http://pywebsvcs.sf.net)"
+-            print "Content-type:", t
+-            print "Content-length:", len(data)
+-            print 'SOAPAction: "%s"' % soapaction
++            for header in headers:
++                print '%s:%s' % header
+             debugFooter(s)
+ 
++        for header in headers:
++            r.putheader(header[0], header[1])
+         r.endheaders()
+ 
+         if config.dumpSOAPOut:
+@@ -195,7 +221,7 @@
+             debugFooter(s)
+ 
+         # send the payload
+-        r.send(data)
++        r.send(transport_data)
+ 
+         # read response line
+         code, msg, headers = r.getreply()
+@@ -227,6 +253,10 @@
+         else:
+             data = r.getfile().read(message_len)
+ 
++        if headers.get('content-encoding', None) == 'gzip':
++            data = gzip.GzipFile(fileobj=StringIO.StringIO(data),
++                                 mode='rb').read()
++
+         if(config.debug):
+             print "code=",code
+             print "msg=", msg
+@@ -493,3 +523,6 @@
+ 
+         def __repr__(self):
+             return "<%s at %d>" % (self.__class__, id(self))
++
++        def __str__(self):
++            return repr(self)
+diff -Naurb Config.py Config.py
+--- Config.py	2011-12-16 10:38:29.771731000 -0500
++++ Config.py	2011-12-16 08:53:03.496363000 -0500
+@@ -121,10 +121,6 @@
+                 
+ 
+             # Server SSL support if M2Crypto.SSL available
+-            try:
+-                from M2Crypto import SSL
+-                d['SSLserver'] = 1
+-            except:
+                 d['SSLserver'] = 0
+ 
+             # Client SSL support if socket.ssl available
+@@ -134,6 +130,13 @@
+             except:
+                 d['SSLclient'] = 0
+ 
++            # Fields pertaining to compression of HTTP messages. If
++            # accept_compressed is set to True, outgoing messages will ask the
++            # server to send back gzip compressed messages. If send_compressed
++            # is set to True, outgoing messages are themselves gzip compressed.
++            self.accept_compressed = False
++            self.send_compressed = False
++
+         for k, v in kw.items():
+             if k[0] != '_':
+                 setattr(self, k, v)
+diff -Naurb Parser.py Parser.py
+--- Parser.py	2011-12-16 10:38:29.763746000 -0500
++++ Parser.py	2011-12-14 13:12:02.666025000 -0500
+@@ -9,9 +9,6 @@
+ import xml.sax
+ from wstools.XMLname import fromXMLname
+ 
+-try: from M2Crypto import SSL
+-except: pass
+-
+ ident = '$Id: Parser.py,v 1.16 2005/02/22 04:29:42 warnes Exp $'
+ from version import __version__
+ 
+diff -Naurb Server.py Server.py
+--- Server.py	2011-12-16 10:38:29.776731000 -0500
++++ Server.py	2011-12-14 13:12:00.262295000 -0500
+@@ -40,11 +40,11 @@
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
++
+ ident = '$Id: Server.py,v 1.21 2005/02/15 16:32:22 warnes Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+-
+ #import xml.sax
+ import re
+ import socket
+@@ -62,9 +62,6 @@
+ from SOAPBuilder import buildSOAP
+ from Utilities   import debugHeader, debugFooter
+ 
+-try: from M2Crypto import SSL
+-except: pass
+-
+ ident = '$Id: Server.py,v 1.21 2005/02/15 16:32:22 warnes Exp $'
+ 
+ from version import __version__
+diff -Naurb SOAPBuilder.py SOAPBuilder.py
+--- SOAPBuilder.py	2011-12-16 10:38:29.759744000 -0500
++++ SOAPBuilder.py	2011-12-08 10:35:07.077909000 -0500
+@@ -134,8 +134,10 @@
+             else:
+                 methodns, n = '', ''
+ 
+-            self.out.append('<%s%s%s%s%s>\n' % (
++            self.out.append('<%s%s%s%s%s>' % (
+                 methodns, self.method, n, a, self.genroot(ns_map)))
++            if self.args or self.kw:
++              self.out.append('\n')
+ 
+         try:
+             if type(self.args) != TupleType:
+@@ -579,13 +581,13 @@
+             # first write out items with order information
+             if hasattr(obj, '_keyord'):
+                 for i in range(len(obj._keyord)):
+-                    self.dump(obj._aslist(i), obj._keyord[i], 1, ns_map)
++                    self.dump(obj._aslist(i), obj._keyord[i], typed, ns_map)
+                     keylist.remove(obj._keyord[i])
+ 
+             # now write out the rest
+             for k in keylist:
+                 if (k[0] != "_"):
+-                    self.dump(getattr(obj,k), k, 1, ns_map)
++                    self.dump(getattr(obj,k), k, typed, ns_map)
+ 
+             if isinstance(obj, bodyType):
+                 self.multis = 1
+diff -Naurb Types.py Types.py
+--- Types.py	2011-12-16 10:38:29.782720000 -0500
++++ Types.py	2011-12-08 10:35:07.118912000 -0500
+@@ -33,11 +33,11 @@
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
++
+ ident = '$Id: Types.py,v 1.19 2005/02/22 04:29:43 warnes Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+-
+ import UserList
+ import base64
+ import cgi
+@@ -99,6 +99,7 @@
+         return data
+ 
+     def _marshalData(self):
++        if isinstance(self._data, basestring): return self._data
+         return str(self._data)
+ 
+     def _marshalAttrs(self, ns_map, builder):
+diff -Naurb wstools/Namespaces.py wstools/Namespaces.py
+--- wstools/Namespaces.py	2005-02-09 10:21:03.000000000 -0500
++++ wstools/Namespaces.py	2011-12-08 10:35:07.080919000 -0500
+@@ -122,4 +122,7 @@
+     CORE    = "http://www.globus.org/namespaces/2004/06/core"
+     SIG     = "http://www.globus.org/2002/04/xmlenc#gssapi-sign"
+ 
++class JAXB:
++    NS = "http://java.sun.com/xml/ns/jaxb"
++
+ ZSI_SCHEMA_URI = 'http://www.zolera.com/schemas/ZSI/'
+diff -Naurb wstools/XMLSchema.py wstools/XMLSchema.py
+--- wstools/XMLSchema.py	2005-02-18 08:50:14.000000000 -0500
++++ wstools/XMLSchema.py	2011-12-08 10:35:07.086924000 -0500
+@@ -16,6 +16,7 @@
+ 
+ import types, weakref, urllib, sys
+ from threading import RLock
++from Namespaces import JAXB
+ from Namespaces import XMLNS
+ from Utility import DOM, DOMException, Collection, SplitQName
+ from StringIO import StringIO
+@@ -674,7 +675,7 @@
+                     'class instance %s, missing required attribute %s'\
+                     %(self.__class__, a)
+         for a in self.attributes.keys():
+-            if (a not in (XMLSchemaComponent.xmlns, XMLNS.XML)) and\
++            if (a not in (XMLSchemaComponent.xmlns, XMLNS.XML, JAXB.NS)) and\
+                 (a not in self.__class__.attributes.keys()) and not\
+                 (self.isAttribute() and self.isReference()):
+                 raise SchemaError, '%s, unknown attribute(%s,%s)' \
+@@ -2860,7 +2861,7 @@
+     """Tuple of length 2, consisting of
+        a namespace and unprefixed name.
+     """
+-    def __init__(self, args):
++    def __new__(self, args):
+         """args -- (namespace, name)
+            Remove the name's prefix, irrelevant.
+         """
+@@ -2868,8 +2869,7 @@
+             raise TypeError, 'expecting tuple (namespace, name), got %s' %args
+         elif args[1].find(':') >= 0:
+             args = (args[0], SplitQName(args[1])[1])
+-        tuple.__init__(self, args)
+-        return
++        return tuple.__new__(TypeDescriptionComponent, args)
+ 
+     def getTargetNamespace(self):
+         return self[0]

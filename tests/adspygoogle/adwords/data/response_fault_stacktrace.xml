@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Header>
+  <responseTime soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v12">175</responseTime>
+  <operations soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v12">0</operations>
+  <units soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v12">0</units>
+  <requestId soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="0" xmlns="https://adwords.google.com/api/adwords/v12">7c64a00b50ffd5f874dc9bb8b2b3c342</requestId>
+ </soapenv:Header>
+ <soapenv:Body>
+  <soapenv:Fault>
+     <faultcode>soapenv:Server.generalException</faultcode>
+     <faultstring>An internal error has occurred.  Please retry your request.</faultstring>
+     <detail>
+      <ns1:fault xmlns:ns1="https://adwords.google.com/api/adwords/v12">
+       <ns1:code>0</ns1:code>
+       <ns1:message>An internal error has occurred.  Please retry your request.</ns1:message>
+    </ns1:fault>
+      <ns2:stacktrace xmlns:ns2="https://adwords.google.com/api/adwords/v12">Blah, blah, blah, something bad happened.</ns2:stacktrace>
+      <ns3:stacktrace xmlns:ns3="https://adwords.google.com/api/adwords/v12">Blah, blah, blah, something bad happened.</ns3:stacktrace>
+   </detail>
+  </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>

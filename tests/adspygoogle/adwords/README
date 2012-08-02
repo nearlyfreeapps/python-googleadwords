@@ -1,0 +1,14 @@
+Unit tests to use with the client library. The appropriate unit test should be
+executed whenever you make changes to any of the core library's sources.
+
+The examples for image ads, video ads, and mobile ads to test against
+(i.e. ad_group_ad_service_unittest.py) can be found at
+http://adwords.google.com/support/aw/bin/static.py?page=imagesamples.html,
+http://adwords.google.com/support/aw/bin/static.py?page=videosamples.html, and
+http://adwords.google.com/support/aw/bin/static.py?page=mobileimagesamples.html.
+
+By default, all unit tests are (and should be) executed against the sandbox
+environment.
+
+To run all unit tests, execute "alltests.py" script. The required data files are
+located in "data/".

@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>adspygoogle.common.oauth.OAuthHandler.OAuthHandler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="adspygoogle-module.html">Package&nbsp;adspygoogle</a> ::
+        <a href="adspygoogle.common-module.html">Package&nbsp;common</a> ::
+        <a href="adspygoogle.common.oauth-module.html">Package&nbsp;oauth</a> ::
+        <a href="adspygoogle.common.oauth.OAuthHandler-module.html">Module&nbsp;OAuthHandler</a> ::
+        Class&nbsp;OAuthHandler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class OAuthHandler</h1><p class="nomargin-top"><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">OAuthHandler</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html">PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Defines a base, abstract class that handles the messiness of 
+  OAuth.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#AddParamsToUrl" class="summary-sig-name">AddParamsToUrl</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">params</span>)</span><br />
+      Adds parameters to a URL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.AddParamsToUrl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#FormatParametersForHeader" class="summary-sig-name">FormatParametersForHeader</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">params</span>)</span><br />
+      Formats OAuth parameters for use in an HTTP header.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.FormatParametersForHeader">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#FormatParametersForUrl" class="summary-sig-name">FormatParametersForUrl</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">params</span>)</span><br />
+      Formats OAuth parameters for use in a URL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.FormatParametersForUrl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetAccessEndpoint" class="summary-sig-name">GetAccessEndpoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">params</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets the access endpoint using the given server and parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAccessEndpoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetAccessToken" class="summary-sig-name">GetAccessToken</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">credentials</span>,
+        <span class="summary-sig-arg">verifier</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets the access token for an authorized request token.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAccessToken">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetAuthorizationUrl" class="summary-sig-name">GetAuthorizationUrl</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">credentials</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets the authorization URL for a request token.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAuthorizationUrl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetAuthorizeEndpoint" class="summary-sig-name">GetAuthorizeEndpoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">params</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets the authorization endpoint using the given server and parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAuthorizeEndpoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetEndpoint" class="summary-sig-name">GetEndpoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">endpoint</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">params</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets an endpoint using the given server and parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetEndpoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetRequestEndpoint" class="summary-sig-name">GetRequestEndpoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">params</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets the request endpoint using the given server and parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetRequestEndpoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetRequestToken" class="summary-sig-name">GetRequestToken</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">credentials</span>,
+        <span class="summary-sig-arg">scope</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">callbackurl</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">applicationname</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Gets a request token.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetRequestToken">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetSignedRequestParameters" class="summary-sig-name">GetSignedRequestParameters</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">credentials</span>,
+        <span class="summary-sig-arg">url</span>)</span><br />
+      Gets the signed OAuth parameters required to make a request for the URL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetSignedRequestParameters">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#ReplaceServerInUrl" class="summary-sig-name">ReplaceServerInUrl</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">server</span>)</span><br />
+      Replaces the protocol and server portion of a URL with another.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.ReplaceServerInUrl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#ACCESS_ENDPOINT" class="summary-name">ACCESS_ENDPOINT</a> = <code title="'https://www.google.com/accounts/OAuthGetAccessToken'"><code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthGetAcc</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#AUTHORIZE_ENDPOINT" class="summary-name">AUTHORIZE_ENDPOINT</a> = <code title="'https://www.google.com/accounts/OAuthAuthorizeToken'"><code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthAut</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DEFAULT_CALLBACK_URL"></a><span class="summary-name">DEFAULT_CALLBACK_URL</span> = <code title="'oob'"><code class="variable-quote">'</code><code class="variable-string">oob</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#REQUEST_ENDPOINT" class="summary-name">REQUEST_ENDPOINT</a> = <code title="'https://www.google.com/accounts/OAuthGetRequestToken'"><code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthGetRe</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="AddParamsToUrl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">AddParamsToUrl</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">url</span>,
+        <span class="sig-arg">params</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.AddParamsToUrl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Adds parameters to a URL.
+
+Args:
+  url: str The URL.
+  params: dict The parameters to add.
+Returns:
+  str The new URL with the parameters added.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="FormatParametersForHeader"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">FormatParametersForHeader</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">params</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.FormatParametersForHeader">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Formats OAuth parameters for use in an HTTP header.
+
+For example: param1=&quot;value1&quot;, param2=&quot;value2&quot;
+
+Args:
+  params: dict The OAuth parameters.
+Returns:
+  str The parameters formatted for use in an HTTP header.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="FormatParametersForUrl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">FormatParametersForUrl</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">params</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.FormatParametersForUrl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Formats OAuth parameters for use in a URL.
+
+For example: param1=value1&amp;param2=value2.
+
+Args:
+  params: dict The OAuth parameters.
+Returns:
+  str The parameters formatted for use in a URL.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetAccessEndpoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetAccessEndpoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">params</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAccessEndpoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the access endpoint using the given server and parameters.
+
+Args:
+  server: str Optional OAuth server to use for the endpoint.
+  params: dict Optional params to include in the endpoint.
+Returns:
+  str The access endpoint.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetAccessToken"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetAccessToken</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">credentials</span>,
+        <span class="sig-arg">verifier</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAccessToken">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the access token for an authorized request token.
+
+Must be overridden by implementors.
+
+Args:
+  credentials: dict The credentials, including the consumer key, consumer
+               secret, token, and token secret.
+  verifier: str The OAuth verifier code returned with the callback.
+  server: str Optional OAuth server to make the request against.
+Returns:
+  str The credentials, including the consumer key, consumer secret, token,
+      and token secret.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetAuthorizationUrl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetAuthorizationUrl</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">credentials</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAuthorizationUrl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the authorization URL for a request token.
+
+Args:
+  credentials: dict The credentials, including the token.
+  server: str Optional OAuth server to generate the URL for.
+Returns:
+  str An authorization URL to redirect users to.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetAuthorizeEndpoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetAuthorizeEndpoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">params</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetAuthorizeEndpoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the authorization endpoint using the given server and parameters.
+
+Args:
+  server: str Optional OAuth server to use for the endpoint.
+  params: dict Optional params to include in the endpoint.
+Returns:
+  str The authorization endpoint.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetEndpoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetEndpoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">endpoint</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">params</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetEndpoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets an endpoint using the given server and parameters.
+
+Args:
+  endpoint: str The base endpoint URL to use.
+  server: str Optional OAuth server to use for the endpoint.
+  params: dict Optional params to include in the endpoint.
+Returns:
+  str The endpoint.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetRequestEndpoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetRequestEndpoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">params</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetRequestEndpoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the request endpoint using the given server and parameters.
+
+Args:
+  server: str Optional OAuth server to use for the endpoint.
+  params: dict Optional params to include in the endpoint.
+Returns:
+  str The request endpoint.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetRequestToken"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetRequestToken</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">credentials</span>,
+        <span class="sig-arg">scope</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">callbackurl</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">applicationname</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetRequestToken">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets a request token.
+
+Must be overridden by implementors.
+
+Args:
+  credentials: dict The credentials, including the consumer key and consumer
+               secret.
+  scope: str The scope of the application to authorize.
+  server: str Optional OAuth server to make the request against.
+  callbackurl: str Optional callback url.
+  applicationname: str Optional name of the application to display on the
+                   authorization redirect page.
+Returns:
+  dict The credentials, including the consumer key, consumer secret, token
+       and token secret.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetSignedRequestParameters"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetSignedRequestParameters</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">credentials</span>,
+        <span class="sig-arg">url</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.GetSignedRequestParameters">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gets the signed OAuth parameters required to make a request for the URL.
+
+Must be overridden by implementors.
+
+Args:
+  credentials: dict The credentials, including the consumer key, consumer
+                    secret, token, and token secret.
+  url: str The URL the request will be made against.
+Returns:
+  dict An array of OAuth parameter names to values.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="ReplaceServerInUrl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ReplaceServerInUrl</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">url</span>,
+        <span class="sig-arg">server</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.oauth.OAuthHandler-pysrc.html#OAuthHandler.ReplaceServerInUrl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Replaces the protocol and server portion of a URL with another.
+
+Args:
+  url: str The full URL.
+  server: str The protocol and server to replace with.
+Returns:
+  str The URL with the protocol and server replaced.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ACCESS_ENDPOINT"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ACCESS_ENDPOINT</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthGetAccessToken</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="AUTHORIZE_ENDPOINT"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">AUTHORIZE_ENDPOINT</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthAuthorizeToken</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="REQUEST_ENDPOINT"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">REQUEST_ENDPOINT</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">https://www.google.com/accounts/OAuthGetRequestToken</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>adspygoogle.common.oauth.PythonOAuth2OAuthHandler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="adspygoogle-module.html">Package&nbsp;adspygoogle</a> ::
+        <a href="adspygoogle.common-module.html">Package&nbsp;common</a> ::
+        <a href="adspygoogle.common.oauth-module.html">Package&nbsp;oauth</a> ::
+        Module&nbsp;PythonOAuth2OAuthHandler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler-module.html">Module adspygoogle.common.oauth.PythonOAuth2OAuthHandler</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2011 Google Inc. All Rights Reserved.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># Licensed under the Apache License, Version 2.0 (the "License");</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># you may not use this file except in compliance with the License.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># You may obtain a copy of the License at</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#      http://www.apache.org/licenses/LICENSE-2.0</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Unless required by applicable law or agreed to in writing, software</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># distributed under the License is distributed on an "AS IS" BASIS,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># See the License for the specific language governing permissions and</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># limitations under the License.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""Creates a default OAuth handler."""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-name">__author__</tt> <tt class="py-op">=</tt> <tt class="py-string">'api.kwinter@gmail.com (Kevin Winter)'</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urllib</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urlparse</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">oauth2</tt> <tt class="py-keyword">as</tt> <tt id="link-0" class="py-name" targets="Package adspygoogle.common.oauth=adspygoogle.common.oauth-module.html"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-0', 'oauth', 'link-0');">oauth</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module adspygoogle.common.oauth.OAuthHandler=adspygoogle.common.oauth.OAuthHandler-module.html,Class adspygoogle.common.oauth.OAuthHandler.OAuthHandler=adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html"><a title="adspygoogle.common.oauth.OAuthHandler
+adspygoogle.common.oauth.OAuthHandler.OAuthHandler" class="py-name" href="#" onclick="return doclink('link-1', 'OAuthHandler', 'link-1');">OAuthHandler</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name"><a title="adspygoogle.common.oauth.OAuthHandler
+adspygoogle.common.oauth.OAuthHandler.OAuthHandler" class="py-name" href="#" onclick="return doclink('link-2', 'OAuthHandler', 'link-1');">OAuthHandler</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler"></a><div id="PythonOAuth2OAuthHandler-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler-toggle" onclick="return toggle('PythonOAuth2OAuthHandler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html">PythonOAuth2OAuthHandler</a><tt class="py-op">(</tt><tt class="py-base-class">OAuthHandler</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="PythonOAuth2OAuthHandler-expanded"><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">  <tt class="py-docstring">"""An OAuth handler that uses python-oauth2.</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">  Library included from: https://github.com/simplegeo/python-oauth2.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">  """</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler.GetRequestToken"></a><div id="PythonOAuth2OAuthHandler.GetRequestToken-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler.GetRequestToken-toggle" onclick="return toggle('PythonOAuth2OAuthHandler.GetRequestToken');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetRequestToken">GetRequestToken</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">credentials</tt><tt class="py-op">,</tt> <tt class="py-param">scope</tt><tt class="py-op">,</tt> <tt class="py-param">server</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">callbackurl</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">                      <tt class="py-param">applicationname</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler.GetRequestToken-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="PythonOAuth2OAuthHandler.GetRequestToken-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-docstring">"""Gets a request token.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">      credentials: dict The credentials, including the consumer key and consumer</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">                   secret.</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">      scope: str The scope of the application to authorize.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">      server: str Optional OAuth server to make the request against.</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">      callbackurl: str Optional callback url.</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">      applicationname: str Optional name of the application to display on the</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">                       authorization redirect page.</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">      dict The credentials, including the consumer key, consumer secret, token</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">           and token secret.</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-name">consumer</tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-3', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Consumer</tt><tt class="py-op">(</tt><tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_key'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                              <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_secret'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-name">signature_method</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-4', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">SignatureMethod_HMAC_SHA1</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-string">'scope'</tt><tt class="py-op">:</tt> <tt class="py-name">scope</tt><tt class="py-op">,</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-string">'oauth_version'</tt><tt class="py-op">:</tt> <tt class="py-string">'1.0a'</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">applicationname</tt><tt class="py-op">:</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">'xoauth_displayname'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">applicationname</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">callbackurl</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">      <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_callback'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">callbackurl</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">      <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_callback'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable adspygoogle.common.oauth.OAuthHandler.OAuthHandler.DEFAULT_CALLBACK_URL=adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#DEFAULT_CALLBACK_URL"><a title="adspygoogle.common.oauth.OAuthHandler.OAuthHandler.DEFAULT_CALLBACK_URL" class="py-name" href="#" onclick="return doclink('link-5', 'DEFAULT_CALLBACK_URL', 'link-5');">DEFAULT_CALLBACK_URL</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-name">endpoint</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method adspygoogle.common.oauth.OAuthHandler.OAuthHandler.GetRequestEndpoint()=adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetRequestEndpoint"><a title="adspygoogle.common.oauth.OAuthHandler.OAuthHandler.GetRequestEndpoint" class="py-name" href="#" onclick="return doclink('link-6', 'GetRequestEndpoint', 'link-6');">GetRequestEndpoint</a></tt><tt class="py-op">(</tt><tt class="py-name">server</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-name">request</tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-7', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Request</tt><tt class="py-op">.</tt><tt class="py-name">from_consumer_and_token</tt><tt class="py-op">(</tt><tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-string">'GET'</tt><tt class="py-op">,</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                                                    <tt class="py-name">endpoint</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">sign_request</tt><tt class="py-op">(</tt><tt class="py-name">signature_method</tt><tt class="py-op">,</tt> <tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler.GetTokenFromUrl()=adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetTokenFromUrl"><a title="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler.GetTokenFromUrl" class="py-name" href="#" onclick="return doclink('link-8', 'GetTokenFromUrl', 'link-8');">GetTokenFromUrl</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">to_url</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">token</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token_secret'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">token</tt><tt class="py-op">.</tt><tt class="py-name">secret</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">credentials</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler.GetAccessToken"></a><div id="PythonOAuth2OAuthHandler.GetAccessToken-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler.GetAccessToken-toggle" onclick="return toggle('PythonOAuth2OAuthHandler.GetAccessToken');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetAccessToken">GetAccessToken</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">credentials</tt><tt class="py-op">,</tt> <tt class="py-param">verifier</tt><tt class="py-op">,</tt> <tt class="py-param">server</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler.GetAccessToken-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="PythonOAuth2OAuthHandler.GetAccessToken-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-docstring">"""Gets the access token for an authorized request token.</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">      credentials: dict The credentials, including the consumer key, consumer</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">                   secret, token, and token secret.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">      verifier: str The OAuth verifier code returned with the callback.</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">      server: str Optional OAuth server to make the request against.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">      str The credentials, including the consumer key, consumer secret, token,</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">          and token secret.</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">consumer</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-9', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Consumer</tt><tt class="py-op">(</tt><tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_key'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                              <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_secret'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-10', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Token</tt><tt class="py-op">(</tt><tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                        <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token_secret'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-name">signature_method</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-11', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">SignatureMethod_HMAC_SHA1</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">verifier</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">      <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">          <tt class="py-string">'oauth_verifier'</tt><tt class="py-op">:</tt> <tt class="py-name">verifier</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">          <tt class="py-string">'oauth_version'</tt><tt class="py-op">:</tt> <tt class="py-string">'1.0a'</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">      <tt class="py-op">}</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">      <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-name">endpoint</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method adspygoogle.common.oauth.OAuthHandler.OAuthHandler.GetAccessEndpoint()=adspygoogle.common.oauth.OAuthHandler.OAuthHandler-class.html#GetAccessEndpoint"><a title="adspygoogle.common.oauth.OAuthHandler.OAuthHandler.GetAccessEndpoint" class="py-name" href="#" onclick="return doclink('link-12', 'GetAccessEndpoint', 'link-12');">GetAccessEndpoint</a></tt><tt class="py-op">(</tt><tt class="py-name">server</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-name">request</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-13', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Request</tt><tt class="py-op">.</tt><tt class="py-name">from_consumer_and_token</tt><tt class="py-op">(</tt><tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">token</tt><tt class="py-op">,</tt> <tt class="py-string">'GET'</tt><tt class="py-op">,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                                                    <tt class="py-name">endpoint</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">sign_request</tt><tt class="py-op">(</tt><tt class="py-name">signature_method</tt><tt class="py-op">,</tt> <tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">token</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler.GetTokenFromUrl" class="py-name" href="#" onclick="return doclink('link-14', 'GetTokenFromUrl', 'link-8');">GetTokenFromUrl</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">to_url</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">token</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token_secret'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">token</tt><tt class="py-op">.</tt><tt class="py-name">secret</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">credentials</tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler.GetSignedRequestParameters"></a><div id="PythonOAuth2OAuthHandler.GetSignedRequestParameters-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler.GetSignedRequestParameters-toggle" onclick="return toggle('PythonOAuth2OAuthHandler.GetSignedRequestParameters');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetSignedRequestParameters">GetSignedRequestParameters</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">credentials</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler.GetSignedRequestParameters-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="PythonOAuth2OAuthHandler.GetSignedRequestParameters-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-docstring">"""Gets the signed OAuth parameters required to make a request for the URL.</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">      credentials: dict The credentials, including the consumer key, consumer</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">                        secret, token, and token secret.</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">      url: str The URL the request will be made against.</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">      dict An array of OAuth parameter names to values.</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">consumer</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-15', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Consumer</tt><tt class="py-op">(</tt><tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_key'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                              <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_consumer_secret'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-16', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Token</tt><tt class="py-op">(</tt><tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                        <tt class="py-name">credentials</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token_secret'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-name">signature_method</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-17', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">SignatureMethod_HMAC_SHA1</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-string">'oauth_version'</tt><tt class="py-op">:</tt> <tt class="py-string">'1.0a'</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt class="py-name">request</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-18', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Request</tt><tt class="py-op">.</tt><tt class="py-name">from_consumer_and_token</tt><tt class="py-op">(</tt><tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">token</tt><tt class="py-op">,</tt> <tt class="py-string">'POST'</tt><tt class="py-op">,</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                                                    <tt class="py-name">url</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">sign_request</tt><tt class="py-op">(</tt><tt class="py-name">signature_method</tt><tt class="py-op">,</tt> <tt class="py-name">consumer</tt><tt class="py-op">,</tt> <tt class="py-name">token</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler.GetTokenFromUrl"></a><div id="PythonOAuth2OAuthHandler.GetTokenFromUrl-def"><a name="L134"></a><tt class="py-lineno">134</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler.GetTokenFromUrl-toggle" onclick="return toggle('PythonOAuth2OAuthHandler.GetTokenFromUrl');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetTokenFromUrl">GetTokenFromUrl</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler.GetTokenFromUrl-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="PythonOAuth2OAuthHandler.GetTokenFromUrl-expanded"><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-docstring">"""Makes and HTTP request to the given URL and extracts the OAuth token.</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">      url: str The URL to make the request to.</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">      Token The returned token.</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlopen</tt><tt class="py-op">(</tt><tt class="py-name">url</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler.GetTokenFromQueryString()=adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetTokenFromQueryString"><a title="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler.GetTokenFromQueryString" class="py-name" href="#" onclick="return doclink('link-19', 'GetTokenFromQueryString', 'link-19');">GetTokenFromQueryString</a></tt><tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="PythonOAuth2OAuthHandler.GetTokenFromQueryString"></a><div id="PythonOAuth2OAuthHandler.GetTokenFromQueryString-def"><a name="L145"></a><tt class="py-lineno">145</tt> <a class="py-toggle" href="#" id="PythonOAuth2OAuthHandler.GetTokenFromQueryString-toggle" onclick="return toggle('PythonOAuth2OAuthHandler.GetTokenFromQueryString');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="adspygoogle.common.oauth.PythonOAuth2OAuthHandler.PythonOAuth2OAuthHandler-class.html#GetTokenFromQueryString">GetTokenFromQueryString</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">querystring</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PythonOAuth2OAuthHandler.GetTokenFromQueryString-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="PythonOAuth2OAuthHandler.GetTokenFromQueryString-expanded"><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-docstring">"""Parses a query string and extracts the OAuth token.</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">      querystring: str The query string.</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">      Token The returned token.</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">    <tt class="py-name">values</tt> <tt class="py-op">=</tt> <tt class="py-name">urlparse</tt><tt class="py-op">.</tt><tt class="py-name">parse_qs</tt><tt class="py-op">(</tt><tt class="py-name">querystring</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-20" class="py-name"><a title="adspygoogle.common.oauth" class="py-name" href="#" onclick="return doclink('link-20', 'oauth', 'link-0');">oauth</a></tt><tt class="py-op">.</tt><tt class="py-name">Token</tt><tt class="py-op">(</tt><tt class="py-name">values</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token'</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                       <tt class="py-name">values</tt><tt class="py-op">[</tt><tt class="py-string">'oauth_token_secret'</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

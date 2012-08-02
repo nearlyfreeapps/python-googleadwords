@@ -1,0 +1,142 @@
+
+AdWords and DoubleClick Ad Exchange Buyer API Python Client Library
+===================================================================
+
+Google's AdWords and DoubleClick Ad Exchange API service lets developers design
+computer programs that interact directly with the AdWords and DoubleClick Ad
+Exchange platform. With these applications, advertisers and third parties can
+more efficiently -- and creatively -- manage their large or complex AdWords and
+DoubleClick Ad Exchange accounts and campaigns.
+
+AdWords and DoubleClick Ad Exchange API Python Client Library makes it easier to
+write Python clients to programmatically access AdWords and DoubleClick Ad
+Exchange accounts. One of the main features of this client library is that it
+hides SOAP layer from end user, which makes it much easier to interact with API.
+The outgoing and incoming SOAP messages are monitored and logged on demand. The
+response headers like responseTime, units, requestId, etc. can also be logged on
+demand. Another nice feature of this client library is that it handles data
+types for all API call parameters. All variables are passed in as either dict,
+list, or str. The conversion to the right type is handled internally by the
+client library. Each client instance keeps track of its own number of API units
+and operations consumed during the program run.
+
+Starting with 15.0.0, the client library uses a patched version of the SOAPpy
+web services toolkit from http://pywebsvcs.sourceforge.net/, which is included
+in the tarball download. This change allows us to write more consistent and
+maintainable code, including unit tests and code examples.
+
+This change also includes fixes to make SOAPpy follow the WSDL when returning
+objects. For example, when an element is defined in the WSDL with maxOccurs > 1,
+this is traditionally represented as a list (SOAPpy would return back a list of
+elements when more than one element is present in the response). However, when
+only a single element is returned in the response, SOAPpy used to return back
+just the element, not the element wrapped in a list. Starting with 15.0.0, it
+will correctly return back a list with a single element.
+
+Multiple modules are supported for parsing SOAP XML messages. By default, the
+client library uses the PyXML module in order to parse SOAP XML messages. In
+addition, the SOAPpy library supports ElementTree module, which may be activated
+simply by setting the appropriate config value (i.e. config['xml_parser']).
+Also, if you have Python v2.5+, the ElementTree comes with it. The cElementTree
+module is now also supported.
+
+The code examples, located in "examples/", demonstrate how to use the client
+library. For additional examples, take a look at the unit tests in "tests/".
+
+Useful scripts are located in "scripts/" directory.
+
+The documentation was generated using Epydoc, a nice tool for generating API
+documentation for Python modules, and is located in "docs/".
+
+The client library includes a set of unit tests located in "tests/". All unit
+tests are (and should be) executed against the Sandbox environment. Whenever
+changes are made to the client library, the appropriate unit test should be
+executed to make sure that everything is working as intended and no new bugs
+were introduced.
+
+
+How do I start?
+---------------
+
+Start by making sure that you have Python installed on your machine. If you
+don't have one already, sign up for a Google Account at
+https://www.google.com/accounts/NewAccount. Once that's taken care of, proceed
+to the step-by-step guide below. Write some code and enjoy!
+
+
+Step-by-step guide for accessing the sandbox:
+-----------------------------------------
+
+1) Make sure you have Python v2.4 or above installed. The latest stable version
+   can be fetched from http://www.python.org/.
+
+2) If using PyXML, fetch the latest version of PyXML module from
+   http://sourceforge.net/projects/pyxml/.
+
+3) Sign up for a Google Account. In later steps, we'll assume that the new login
+   is joe.shmoe@gmail.com.
+
+4) Navigate to the directory that contains your downloaded unzipped client
+   library and run the "setup.py" script to install the "adspygoogle.adwords"
+   module.
+
+   $ python setup.py build install
+
+5) From the same directory, run the "config.py" script to set authentication
+   headers. More information about the format of each header is
+   at http://code.google.com/apis/adwords/docs/developer/adwords_api_sandbox.html#requestheaders.
+   Example,
+
+   Your AdWords account's login email: joe.shmoe@gmail.com
+   Login password: secret
+   Login client customer id:
+   User agent: GoogleTest
+   Developer token: joe.shmoe@gmail.com++USD
+
+   Select XML parser [1=PyXML, 2=ElementTree]: 1
+   Enable debugging mode [y/n]: n
+   Enable SOAP XML logging mode [y/n]: y
+   Enable API request logging mode [y/n]: y
+
+6) Run "examples/adspygoogle/adwords/VERSION/basic_operations/get_campaigns.py",
+   which will set up your Sandbox with five client accounts. Please note that
+   starting with v201109 you must use a clientCustomerId (you can run the script
+   again to update the value). We have provided a code example to translate
+   between them:
+   "examples/adspygoogle/adwords/VERSION/basic_operations/get_client_customer_id.py"
+
+7) Read over the documentation in "docs/index.html" to familiarize yourself with
+   the API of the client library.
+
+
+Where do I submit bug reports and/or feature requests?
+---------------------------------------------------
+
+Use the issue tracker at
+http://code.google.com/p/google-api-ads-python/issues/list.
+
+
+External Dependencies:
+----------------------
+
+    - Python v2.4+         -- http://www.python.org/
+    - PyXML v0.8.3+        -- http://sourceforge.net/projects/pyxml/
+                           or
+      ElementTree v1.2.6+  -- http://effbot.org/zone/element-index.htm
+                           or
+      cElementTree v1.0.6+ -- http://www.python.org/
+                           (part of the Python v2.5+)
+    - Epydoc               -- http://epydoc.sourceforge.net/
+                           (only if you will be generating docs)
+    - fpconst              -- http://pypi.python.org/pypi/fpconst/#downloads
+    - oauth2client         -- http://code.google.com/p/google-api-python-client/downloads/list
+                           (only if using oauth2)
+    - Google Account       -- https://www.google.com/accounts/NewAccount
+
+
+Author:
+    api.sgrinberg@gmail.com (Stan Grinberg)
+    api.kwinter@gmail.com (Kevin Winter)
+
+Maintainer:
+    api.kwinter@gmail.com (Kevin Winter)

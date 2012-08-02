@@ -1,0 +1,162 @@
+code,message
+0,"The client request was properly formed, but a server error occurred while processing it."
+1,The client request did not contain an 'email' header.
+2,The client request did not contain a 'useragent' header.
+3,The client request contains malformed headers.
+4,The client does not have permission to perform the requested operation.
+5,The client asked us to load an entity but no entity with that ID was found.
+6,The client sent an invalid string for Ad Group status.
+7,"The client sent a CPC which is outside the range of valid values. The minimum allowed bid is 50000 micros (which in US dollars, for example, is 5 cents). This error frequently occurs because the minimum bid is not high enough, so we recommend you check your minimum bid. For more information on micros, see the section Monetary Units in the AdWords API Web Services chapter.  This error code is planned to be removed in v10."
+8,The client request did not contain a 'password' header.
+9,The client's email/password credentials are invalid.
+10,The client sent an invalid human-readable name for an entity.
+12,The client sent a request that has an invalid array length.
+13,The client sent a language code that is invalid.
+14,"The client supplied keyword text that is invalid. It may have illegal characters, be too long, or be blank."
+15,The client sent an invalid keyword type.
+16,The client sent an invalid Destination URL.
+17,The client has tried to create an entity that goes beyond the size limits on AdWords campaigns.
+18,Some sort of internal traffic estimate error occurred.
+19,The specified language code is invalid.
+20,The specified currency code is invalid.
+21,"The text specified for this Creative violates Google policy. If this error occurs, the detail field of the response contains a Violation element that has some or all of the following fields (depending on how much information is available):    index - indicates the index of the element in the input array   that caused the violation.   trigger - a string describing the violation that triggered the error.   isExemptable - a boolean indicating whether it is possible to get an exemption   for this kind of violation or not. The default is false.   textIndex - where in the text the violation occurred.   textLength - length of the string that caused the violation.   reason - why the violation occurred.  For more information about what it means for creatives to violate Google editorial policy, see the section Policy Checking. For details, see Editorial Guidelines. Policy violation errors are considered to be user errors, and they count against your quota."
+22,The Ad Group request array is null.
+23,The campaign request array is null.
+24,The keyword request array is null.
+25,The client tried to do something with a report job that is illegal given its current status.
+26,The specified country code is invalid.
+27,The specified metro code is invalid.
+28,The specified region code is invalid.
+29,The specified geo target is invalid.
+30,The specified report job has invalid parameters.
+31,The specified report job has missing required parameters.
+32,A report job cannot be scheduled because the user has too many jobs already running.
+33,The specified city string is invalid.
+34,The specified budget is invalid for this campaign.
+35,The specified end date is invalid for this campaign.
+36,The specified name is invalid for this campaign.
+37,The specified status change request is invalid.
+38,The specified keyword status is not valid.
+39,The specified enumeration value is not valid.
+40,The scheduled report job is too large to generate.
+41,The request did not contain a header named 'token' or 'developerToken'.
+42,The given token is invalid.
+43,API invocation quota has been exceeded.
+44,A parameter or field was specified as null in a case where nulls are not allowed.
+45,A date range is not valid.
+46,The email address is not formed properly.
+47,The password is not formed properly.
+48,The address is not formed correctly. This error is thrown by the AccountService.
+49,The business category is unknown or no longer supported. This error is thrown by the AccountService.
+50,The payment information is invalid or not specified correctly. This error is thrown by the AccountService.
+51,An input string was invalid.
+52,The supplied credit card account is in fact not a credit card account.
+53,Credit card authorization failed.
+54,The supplied email address is already taken.
+55,The requested service is unavailable.
+57,The image MIME type is invalid. This error can occur while creating image creatives.
+58,The attempted modification failed due to changes made concurrently by another agent or user.
+59,The supplied image is invalid.
+60,There was an error contacting the image registration server.
+61,The attempted operation can only be performed for users with an MCC login.
+62,You attempted to get a report for an MCC client who is not managed by you.
+63,One or more campaigns supplied for an MCC report are not managed by any of the MCC clients.
+70,A date is invalid.
+71,Attempting to change the CPC of a keyword in an Budget Optimized campaign.
+72,An array argument contains a null value which is not permitted.
+73,The request XML is invalid.
+74,"An attempt was made to use an invalid type of criterion, for example, using a keyword in a site targeted campaign."
+75,A bid was sent which is outside the range of valid values.
+76,"Either maxCpc or maxCpm must be specified, but neither was specified."
+77,"You cannot have more than one of {keywordMaxCpc, siteMaxCpc, maxCpm}."
+78,You can't set maxCpc for a Cpm based campaign.
+79,You can't set maxCpm or siteCpc for a keyword Cpc based campaign.
+80,The CPM which was sent is outside the range of valid values. This error code is planned to be removed in v10.
+81,An attempt was made to add more website exclusions to a campaign than is permitted.
+82,The website URL is invalid.
+83,The given criterion status value is invalid.
+84,An attempt was made to login to an unverified account.
+85,An attempt was made to login to an account that has not agreed to the Terms and Conditions.
+86,"An attempt was made to login to a blocked account. The server prevents unauthorized account access by detecting suspicious login attempts. For example, an account typically becomes blocked after too many attempts to login with the incorrect password. To unblock an account that you access programmatically, you'll need to manually go to the following URL in a browser:  http://www.google.com/accounts/displayunlockcaptcha Before running the client program again, make sure the password in the request header is correct."
+87,This request is attempting to exceed the limit on the maximum number of outstanding requests allowed per developer token.
+88,"This requests contains an unsupported character encoding, or at least claims to according to the HTTP header. UTF-8 and UTF-16 are supported."
+89,"This request violates a version contraint, such as a bad namespace for the URL or attempt to use data outside the requested version."
+90,This request specifies a network target that is missing or invalid.
+91,This request specifies a network type that is invalid. See permissible network type values.
+92,"This request attempts to enable separate content bids on an auto bidder campaign, which is not allowed.  This error code can also indicate an incompatibility with ad scheduling and budget optimizer. It can also be triggered by an attempt to turn budget optimizer on while either separate content bidding or ad scheduling is on."
+93,This request attempts to set a separate content bid in an unenabled campaign. You must enable separate content bids before setting a maxContentCpc.
+94,This request specified a traffic estimate without specifying a client. Need to set the clientEmail header.
+95,There was an error contacting the keyword variation server.
+96,There were too many seed keywords in the request.
+97,There must be at least one positive seed keyword.
+98,There was a problem contacting the site keyword server.
+99,"This website url is invalid, or there is an error with the URL used for generating keywords, or can't access the given URL."
+100,Timed out while trying to load url.
+101,Fetching a URL prevented by server's robots.txt
+102,There was an error loading webpage.
+103,The webpage did not have enough content.
+104,The webpage content is not text.
+105,None of the given URLs were suitable for generating keywords.
+106,Invalid OrderId specified.
+107,"Invalid amount, start date or end date specified."
+109,The specified account has been made delinguent because the last attempt to bill the customer's credit card failed.
+110,The old budget object to modify was not found.
+111,"The timezone specified doesn't match the expected timezone, either your Account's local timezone, or PST depending on the call. It is also acceptable to omit the timezone information."
+112,"Including Zero Impression Keywords will make your report too large to run. To include this data, please narrow the scope of other report settings in this request (such as your View, Date Range, or Campaign/Ad Group selections)."
+114,No billing information has been provided for this account.
+115,The request body did not contain an operation or the specified operation does not exist.
+116,Invalid error code (Sandbox)
+117,Cannot serve any requests for the specified account. Please contact support.
+118,Authorization is pending for the billing information for this account.
+119,The specified account is inactive.
+120,The creative or keyword does not require an exemption. Please resubmit without the exemption request.
+121,"The specified element violates Google policy. For more information about what it means to violate Google editorial policy, see the section Policy Checking. For details, see Editorial Guidelines.  Policy violation errors are considered to be user errors, and they count against your quota."
+122,"One or more input elements failed validation. If this error occurs, the detail field of the response contains a sequence of ApiError elements itemizing the validation errors found. The following fields may be specified:  index - indicates the index of the element in the input array that caused the violation. code - an error code indicating the type of violation. field - the input element field name that contains the violation. trigger - a string describing the violation that triggered the error. isExemptable - a boolean indicating whether it is possible to get an exemption for this kind of violation or not. The default is false. textIndex - where in the text the violation occurred. textLength - length of the string that caused the violation. detail - why the violation occurred. "
+123,The specified value of an immutable field does not match the current state.
+124,An error with a particular scheduling interval
+125,The timezone cannot be set to null.
+127,"The specified start date is unavailable for hourly reporting. The start date must begin on or after February 1, 2006."
+128,"Hourly reporting is not allowed for AdImage, AdGroup, AdText, Custom, Keyword, and URL report jobs."
+129,You can't use the API until you complete the signup process and are approved.
+130,This account has reached its user specified budget.
+131,You have included a token that is different from the developer token.
+132,Budgets cannot be created when the client's currency is different from the order's currency.
+133,An error with an ad schedule not specific to an individual interval.
+134,An attempt to update more criteria that is allowed in a single request was made.
+137,This ad type is invalid.
+138,Client managers cannot have campaigns of their own.
+139,The specified client email does not exist. Your client accounts may not exist because either this is your first time using the sandbox or the sandbox database has been cleaned. Please remove the clientEmail from the request header and call the getClientAccounts method from AccountService to ensure that your client accounts are created and do exist.
+140,The business key is too old to be used.
+141,User cannot create mobile ad for countries targeted in specified campaign.
+142,Specified mobile carriers target a country not targeted by the campaign.
+143,Business search is currently unavailable.
+144,The bid ceiling specified is either too low or exceeds the campaign's daily budget.
+145,You have exceeded the maximum number of keywords that can be added to a traffic estimate.
+146,The business key is a different version from what is expected.
+147,Local business ads not allowed for customer.
+149,Invalid criterion id was provided for a given adGroup.
+153,Invalid category name.
+155,The keyword traffic service is either not running or under heavy load.
+156,Generic error code for an invalid range.
+157,Invalid topic for Site Suggestion Service.
+158,Invalid URL for Site Suggestion Service.
+162,The specified Google account has been disabled.
+163,The specified Google account has not been verified.
+164,Terms for the specified Google account have not been agreed to.
+165,The legacy account has already been migrated.
+166,An unexpected authentication problem occurred. Please try it again later.
+170,User attempted to request a site suggestion operation that is not available for the specified languages and countries.
+171,User attempted to set a custom budget that starts in the past.
+172,User attempted to set a custom budget with dates out of order.
+173,User attempted to modify order lines not in normal status.
+174,User attempted to set an invalid account budget
+176,Click to call country not supported in mobile ads.
+177,Separate content keyword bids are not applicable with a campaign of this type (e.g. site Cpm).
+183,Duplicate accounts exist for this login.
+184,Invalid Authentication Header specified
+186,This request specifies content targeting that is missing or invalid.
+188,"This request attempts to enable a feature that is incompatible with conversion optimizer.  For example, a campaign cannot have conversion optimizer and budget optimizer enabled at the same time."
+189,A given campaign/account is not eligible to use conversion optimizer.
+190,This request specifies a whitelist that is invalid.
+206,There is a positive and negative seed pair with the same text.
+207,You can't set Cpc bid on a Cpm based campaign.

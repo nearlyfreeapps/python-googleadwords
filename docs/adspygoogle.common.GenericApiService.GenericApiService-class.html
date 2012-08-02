@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>adspygoogle.common.GenericApiService.GenericApiService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="adspygoogle-module.html">Package&nbsp;adspygoogle</a> ::
+        <a href="adspygoogle.common-module.html">Package&nbsp;common</a> ::
+        <a href="adspygoogle.common.GenericApiService-module.html">Module&nbsp;GenericApiService</a> ::
+        Class&nbsp;GenericApiService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="adspygoogle.common.GenericApiService.GenericApiService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class GenericApiService</h1><p class="nomargin-top"><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">GenericApiService</strong>
+</pre>
+
+<hr />
+<p>Generic wrapper around a SOAPpy proxy.</p>
+  <p>GenericApiService is an abstract class and should not be instantiated 
+  directly. Classes which implement this class are required to provide the 
+  following methods:</p>
+  <p>_SetHeaders _GetMethodInfo _HandleLogsAndErrors</p>
+  <p>The following methods are intended to be overridden as necessary, but 
+  provide functioning default implementations:</p>
+  <p>_TakeActionOnSoapCall _TakeActionOnPackedArgs</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">headers</span>,
+        <span class="summary-sig-arg">config</span>,
+        <span class="summary-sig-arg">op_config</span>,
+        <span class="summary-sig-arg">lock</span>,
+        <span class="summary-sig-arg">logger</span>,
+        <span class="summary-sig-arg">service_name</span>,
+        <span class="summary-sig-arg">service_url</span>,
+        <span class="summary-sig-arg">wrap_lists</span>,
+        <span class="summary-sig-arg">buffer_class</span>,
+        <span class="summary-sig-arg">namespace</span>,
+        <span class="summary-sig-arg">namespace_extractor</span>)</span><br />
+      Inits GenericApiService.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#__getattr__" class="summary-sig-name">__getattr__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Takes an attribute name and tries to create a SOAP call proxy around it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.__getattr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__dir__"></a><span class="summary-sig-name">__dir__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Overrides default dir() behavior; prints the service's public 
+      methods.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.__dir__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_SetHeaders" class="summary-sig-name" onclick="show_private();">_SetHeaders</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Sets the SOAP headers for this service's requests.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._SetHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_GetMethodInfo" class="summary-sig-name" onclick="show_private();">_GetMethodInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method_name</span>)</span><br />
+      Pulls all of the relevant data about a method from a SOAPpy service.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._GetMethodInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_HandleLogsAndErrors" class="summary-sig-name" onclick="show_private();">_HandleLogsAndErrors</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">buf</span>,
+        <span class="summary-sig-arg">start_time</span>,
+        <span class="summary-sig-arg">stop_time</span>,
+        <span class="summary-sig-arg">error</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Manage SOAP XML message.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._HandleLogsAndErrors">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_TakeActionOnSoapCall" class="summary-sig-name" onclick="show_private();">_TakeActionOnSoapCall</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method_name</span>,
+        <span class="summary-sig-arg">args</span>)</span><br />
+      Gives the service a chance to take product-specific action on raw inputs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._TakeActionOnSoapCall">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_TakeActionOnPackedArgs" class="summary-sig-name" onclick="show_private();">_TakeActionOnPackedArgs</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method_name</span>,
+        <span class="summary-sig-arg">ksoap_args</span>)</span><br />
+      Allows a service to take product-specific action on packed arguments.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._TakeActionOnPackedArgs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_ReadyOAuth"></a><span class="summary-sig-name">_ReadyOAuth</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      If OAuth is on, sets the transport handler to add OAuth HTTP header.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._ReadyOAuth">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_ReadyCompression"></a><span class="summary-sig-name">_ReadyCompression</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Sets whether the HTTP transport layer should use compression.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._ReadyCompression">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_CreateMethod"></a><span class="summary-sig-name">_CreateMethod</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method_name</span>)</span><br />
+      Create a method wrapping an invocation to the SOAP service.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._CreateMethod">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#_ManageSoap" class="summary-sig-name" onclick="show_private();">_ManageSoap</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">buf</span>,
+        <span class="summary-sig-arg">log_handlers</span>,
+        <span class="summary-sig-arg">lib_url</span>,
+        <span class="summary-sig-arg">start_time</span>,
+        <span class="summary-sig-arg">stop_time</span>,
+        <span class="summary-sig-arg">error</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Manage SOAP XML message.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._ManageSoap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="adspygoogle.common.GenericApiService.GenericApiService-class.html#CallRawMethod" class="summary-sig-name">CallRawMethod</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">soap_message</span>)</span><br />
+      Makes an API call by POSTing a raw SOAP XML message to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.CallRawMethod">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">headers</span>,
+        <span class="sig-arg">config</span>,
+        <span class="sig-arg">op_config</span>,
+        <span class="sig-arg">lock</span>,
+        <span class="sig-arg">logger</span>,
+        <span class="sig-arg">service_name</span>,
+        <span class="sig-arg">service_url</span>,
+        <span class="sig-arg">wrap_lists</span>,
+        <span class="sig-arg">buffer_class</span>,
+        <span class="sig-arg">namespace</span>,
+        <span class="sig-arg">namespace_extractor</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Inits GenericApiService.
+
+Args:
+  headers: dict Dictionary object with populated authentication
+           credentials.
+  config: dict Dictionary object with populated configuration values.
+  op_config: dict Dictionary object with additional configuration values for
+             this operation.
+  lock: mixed Thread lock to use to synchronize requests. May be a
+        thread.lock or a threading.RLock
+  logger: Logger Instance of Logger to use for logging.
+  service_name: string The name of this service.
+  service_url: string The URL pointing to this web service.
+  wrap_lists: boolean Whether this service needs to wrap lists in an
+              additional layer of XML element tags.
+  buffer_class: class The SoapBuffer subclass to use as a buffer.
+  namespace: string The namespace this service uses by default.
+  namespace_extractor: function A function which takes a URL and returns the
+                       namespace prefix to use to represent it.
+
+Raises:
+  Error: The WSDL for this service could not be found. Will also be raised
+  if GenericApiService is initialized directly rather than by a subclass.
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__getattr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__getattr__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+    <br /><em class="fname">(Qualification operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.__getattr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Takes an attribute name and tries to create a SOAP call proxy around it.
+
+Args:
+  name: string The name of the attribute to fetch. This should be the name
+        of an operation/method in the SOAP service this object represents.
+
+Returns:
+  function A function wrapping an invocation to the given operation
+  (actually a function) in the SOAP service this object contains.
+
+Raises:
+  AttributeError: if the given attribute name cannot be found in this
+  object's SOAP service. Most likely, the given name was not a WSDL-defined
+  SOAP operation in this service.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_SetHeaders"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_SetHeaders</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._SetHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the SOAP headers for this service's requests.</p>
+  <p>Must be overridden by an extending class.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_GetMethodInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_GetMethodInfo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">method_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._GetMethodInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Pulls all of the relevant data about a method from a SOAPpy service.
+
+Must be overridden by an extending class.
+
+The return dictionary has two keys, MethodInfoKeys.INPUTS and
+MethodInfoKeys.OUTPUTS. Each of these keys has a list value. These lists
+contain a dictionary of information on the input/output parameter list, in
+order.
+
+Args:
+  method_name: string The name of the method to pull information for.
+
+Returns:
+  dict A dictionary containing information about a SOAP method.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_HandleLogsAndErrors"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_HandleLogsAndErrors</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">buf</span>,
+        <span class="sig-arg">start_time</span>,
+        <span class="sig-arg">stop_time</span>,
+        <span class="sig-arg">error</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._HandleLogsAndErrors">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Manage SOAP XML message.
+
+Must be overridden by an extending class.
+
+Args:
+  buf: SoapBuffer SOAP buffer.
+  start_time: str Time before service call was invoked.
+  stop_time: str Time after service call was invoked.
+  [optional]
+  error: dict Error, if any.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_TakeActionOnSoapCall"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_TakeActionOnSoapCall</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">method_name</span>,
+        <span class="sig-arg">args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._TakeActionOnSoapCall">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Gives the service a chance to take product-specific action on raw inputs.
+
+If a product needs to take the opportunity to modify the inputs, then its
+extending service class must override this method.
+
+Args:
+  method_name: string The name of the SOAP operation being called.
+  args: tuple The arguments passed into the SOAP operation.
+
+Returns:
+  tuple The method arguments, possibly modified.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_TakeActionOnPackedArgs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_TakeActionOnPackedArgs</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">method_name</span>,
+        <span class="sig-arg">ksoap_args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._TakeActionOnPackedArgs">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Allows a service to take product-specific action on packed arguments.
+
+If a product needs to take the opportunity to modify the packed inputs, then
+its extending service class must override this method.
+
+Args:
+  method_name: string The name of the SOAP operation being called.
+  ksoap_args: dictionary The keyword arguments packed for the SOAP
+              operation.
+
+Returns:
+  dictionary The packed keyword arguments, possibly modified.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_ManageSoap"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_ManageSoap</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">buf</span>,
+        <span class="sig-arg">log_handlers</span>,
+        <span class="sig-arg">lib_url</span>,
+        <span class="sig-arg">start_time</span>,
+        <span class="sig-arg">stop_time</span>,
+        <span class="sig-arg">error</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService._ManageSoap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Manage SOAP XML message.
+
+Args:
+  buf: SoapBuffer SOAP buffer.
+  log_handlers: list Log handlers.
+  lib_url: str URL of the project's home.
+  start_time: str Time before service call was invoked.
+  stop_time: str Time after service call was invoked.
+  [optional]
+  error: dict Error, if any.
+
+Returns:
+  mixed Any fault that occurred with this SOAP operation. The data type may
+  be a string or dictionary depending on what went wrong. If there were no
+  faults with this operation, None is returned.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="CallRawMethod"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">CallRawMethod</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">soap_message</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="adspygoogle.common.GenericApiService-pysrc.html#GenericApiService.CallRawMethod">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Makes an API call by POSTing a raw SOAP XML message to the server.
+
+Args:
+  soap_message: str SOAP XML message.
+
+Returns:
+  tuple Raw XML response from the API method.
+
+Raises:
+  Error: if the SOAP call is not successful. Most likely this is the result
+  of the server sending back an HTTP error, such as a 502.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="adspygoogle-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/google-api-ads-python">AdWords API Python Client Library</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

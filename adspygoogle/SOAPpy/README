@@ -1,0 +1,2 @@
+This directory contains a custom version of SOAPpy. It is slightly patched to
+better serve the Google Ads APIs client libraries.

@@ -1,0 +1,553 @@
+15.4.1:
+- Addressing issue #42, making the installer handle new adwords.util package.
+
+15.4.0:
+- Adding support for v201206.
+- ManagedCustomerService and CustomerService supported in v201109, v201109_1 and
+  v201206.
+- Updating ReportDownloader to use the reportDefinition.xsd.
+- Adding support for AWQL in reports and examples.
+- Addressing issue #39, forcing SOAP header values to string.
+- Fixing issue #41 by using nested trys.
+
+15.3.2:
+- Fixing issue #36, unicode in report definition failed to URL encode.
+
+15.3.1:
+- Updating user agent, no longer persisting useragent changes to pickle.
+- Adding support for OAuth2.  Note that the enable_oauth* settings are no longer
+  necessary - simply set the oauth_credentials to enable OAuth usage.
+- Fixing issue #34 - GSIServer from SOAPpy not compatible with python2.7 (and
+  wasn't being used) - removing it via our patch.
+
+15.3.0:
+- Adding support for v201109_1.
+
+15.2.5:
+- Adding support for v201109 BudgetOrderService.
+
+15.2.4:
+- Fixing bug with ReportDownloader logging when request_log is disabled.
+
+15.2.3:
+- Adding logging to ReportDownloader, to aid in troubleshooting.
+
+15.2.2:
+- Removing support for BulkOpportunityService (was recently shut down).
+
+15.2.1:
+- Re-addressing issue #16 and #25.
+- Misc example fixes.
+
+15.2.0:
+- Removing support for all versions except v201109 (they sunset 2012/02/29).
+- Removing support for clientEmail.  Will now be ignored everywhere.
+
+15.1.5:
+- Fixing misc bugs:
+-- Issue #21, validateOnly header now properly lower-cased.  Also fixed setters
+   to accept same range of values as constructor.
+-- Issue #18, adding reference to fpconst as a dependency in README.
+-- Issue #22, properly regenerating token with report downloads.
+-- Issue #20, applying portions of supplied patch file.
+-- Issue #16, adding unit test to send/receive cyrillic characters with fix.
+- Adding Python version to LIG_SIG so we can better track which versions of
+  Python are in use with the client libraries.
+- Adding better support for captcha challenges.
+
+15.1.4:
+- Re-organizing code examples to better group similar functionality.
+- Code examples are now tested.
+
+15.1.3:
+- Fixing a broken edge-case introduced in 15.1.2 where providing a non-empty
+  email and password but an empty authToken as a headers arg to AdWordsClient
+  failed to validate.
+- Including up-to-date copy of SOAPpy; 15.1.2 was missing some changes that
+  addressed issue #8.
+
+15.1.2:
+- HTTP compression is now supported for both SOAP messages and AdHoc report
+  downloads.
+- Updated to version 3.0.5 of the common library. This addresses issue # 8.
+- Added ability to supply OAuth credentials when AdWordsClient is constructed.
+- Misc minor fixes for AppEngine support.
+- Enhanced report download to accept an open file-like object that supports
+  .write() instead of a file_path.
+- Fixed setup.py to include OAuth package when installed library, addresses
+  issue # 14.
+
+15.1.1:
+- Version 3.0.4 of the common lib addresses issue # 13.
+
+15.1.0:
+- Adding support and example for CreateAccountService.
+- Addressing issue # 12.
+
+15.0.6:
+- Fixing get_account_hierarchy.py v201109 code example.
+- Altering ReportDownloader to better handle 400/500 errors. They will now be
+  wrapped in an AdWordsError and include the HTTP Response body.
+
+15.0.5:
+- Version 3.0.3 of the common lib addresses issue #9.
+- Removed instance of trinary operator from GenericV13AdWordsService to support
+  Python 2.4.
+
+15.0.4:
+- Updated ReportDownloader to provide a developerToken with report downloads.
+- Version 3.0.2 of common lib addresses issue # 6.
+
+15.0.3:
+- Fixing OAuth handling after refactoring methods to properties.
+
+15.0.2:
+- One more attempt at fixing installer script for issue # 5.
+
+15.0.1:
+- Fix for oversight in installer script.  Addresses issue # 5.
+
+15.0.0:
+- Adding support for v201109.
+- Updated adspygoogle.common module to v3.0.0.
+- Removed individual service classes in favor of GenericAdWordsService and
+  GenericV13AdWordsService classes.
+- Added ReportDownloader class to carry forward custom methods in old
+  ReportService. If you used to use client.GetReportDefinitionService to
+  download reports, please now use client.GetReportDownloader instead.
+- Moved some other custom methods into AdWordsUtils.
+- SOAPpy is now bundled with the client library and we no longer require a SOAP
+  toolkit to be installed separately.
+
+14.2.4:
+- Addressing AdWords issue 164 (cannot use super with Exception in Python 2.4)
+  by upgrading Common lib to 2.2.1 and fixing the AdWordsErrors usage of super.
+
+14.2.3:
+- Fixing issues 161, 162, 163.
+- Updated adspygoogle.common module to v2.1.0 to address one of the above
+  issues.  See adspygoogle.common ChangeLog for more details.
+
+14.2.2:
+- Refactoring the internals of our exceptions to address issue 151.
+- Added get_account_hierarchy.py example, to show how to use
+  ServicedAccountService.
+
+14.2.1:
+- Adding support for OAuth 1.0a, which uses a verifier.
+
+14.2.0:
+- Adding OAuth support. See use_oauth.py for example.
+
+14.1.0:
+- Updated adspygoogle.common module to v2.0.0.
+- Added support for validation against the WSDL for all non-v13 services.
+
+14.0.3:
+- Updated README to address issues 150 and 154.
+
+14.0.2:
+- Fixed SanityCheck which was double-encoding snippets (for 3rd party ads).
+
+14.0.1:
+- Merging AdWords and DoubleClick Ad Exchange Buyer API.
+
+14.0.0:
+- Updated adspygoogle.common module to v1.1.7.
+- Added support for v201101 and made it default version.
+
+13.2.0:
+- Updated adspygoogle.common module to v1.1.4.
+- Added support for returnMoneyInMicros.
+- Added code example for handling partial failures.
+- Updated example for checking conversion optimizer eligibility.
+
+13.1.0:
+- Updated adspygoogle.common module to v1.1.2.
+- Added validation support for MediaSelector's mediaDimensions and
+  youTubeVideoIds.
+- Pathced support for ThirdPartyRedirectAd in SOAPPpy.
+- Code examples clean up.
+
+13.0.0:
+- Updated adspygoogle.common module to v1.1.1.
+- Added support for v201008 and set it as a default version.
+- Added support for "partialFailure" SOAP header.
+- Starting with v201008, renamed object's "type" to "xsi_type".
+- Patch for validation layer in MediaService (Fixes issue 126).
+- Patch for properly handling date format in code examples (Fixes issue 127).
+- Patch for self._headers bug (Fixes issue 133).
+- Deprecated "categories.csv", "countries.csv", "languages.csv", "ops_rates",
+  "us_cities.csv", "us_metros.csv", "world_cities.csv", and "world_regions.csv"
+  data files. These are now available in the docs as downloadable CSVs.
+- Deprecated InfoService.GetUnitDetails() and InfoService.GetUnitDetailsDaily().
+
+12.1.0:
+- Updated adspygoogle.common module to v1.1.0.
+- Patch for making SOAPpy optional library (Fixes issue 124).
+
+12.0.0:
+- Restructured client library to have a common framework.
+- Set default API version to v200909.
+- Added SOAPpy validation for v200909 objects (Fixes issue 96).
+- Added SOAPpy support for BulkMutateJobService, InfoService, and
+  TargetingIdeaService (Fixes issue 93), (Fixes issue 97).
+- Added automatic way of loading error types.
+- Updated API error classes.
+- More usage of csv module (Fixes issue 76).
+
+11.1.1:
+- Patch to respect the maximum number of polls (Fixes issue 121). Raised default
+  number of max_polls to 60 (30 mins per job). Raised exception for a job that
+  hasn't completed/failed and max_polls is reached.
+- Patch to rename variable "selector" to "report_type" in
+  ReportDefinitionService.GetReportFields().
+- Patched requested columns in ReportDefinitionService unit test.
+- Patched language codes in TargetingIdeaService unit test.
+
+11.1.0:
+- Added support for v201003.
+- Tagged code examples.
+
+11.0.0:
+- Removed support for deprecated v13 services.
+- Patched in optimization for cElementTree (Fixes issue 114).
+- Updated copyright year.
+
+10.1.0:
+- Patch for UnboundLocalError in SOAPpy's message handler (Fixes issue 111).
+- Patch for retrieving violatingText in ApiException (Fixes issue 112).
+- Patch for generating fault object when debugging is off (Fixes issue 113).
+
+10.0.0:
+- Removed support for v200906.
+- Set applicationToken SOAP header to be optional.
+- Patch for encoded characters in unicode strings (Fixes issue 98).
+- Patch to catch and exclude from request empty SOAP header elements.
+- Patch to add support for native ElementTree (Fixes issue 100).
+- Patch to make sure that "entries" element is always a list, when used
+  with SOAPpy (Fixes issue 101).
+- Patch for setting "authToken" header when strict validation is enabled
+  (Fixes issue 103).
+- Moved test related data files out of "aw_api/data/" into "tests/data/".
+
+9.0.0:
+- Added SOAPpy support for v2009 services, except for BulkMutateJobService,
+  InfoService, and TargetingIdeaService.
+- Extended support for reusing ZSI and SOAPpy objects.
+- Added XML parser option in "aw_api_config.py" (Fixes issue 95).
+- Added patch to explicitly set namespace at XML request method's level.
+- Added tearDown() in some of the unit tests to take care of restoring
+  "use_mcc" state.
+- Modified initialization of unit tests, to reuse a single authToken.
+
+8.0.0:
+- Added new code examples for v200909. Reorganized existing examples.
+- Modified the way Utils.GetMethodCost() determines sandbox call.
+- Fixed BiddingStrategy to cover all its data fields, backward incompatible
+  change.
+- Fixed "tests/ad_extensions_override_service_unittest.py" unit test.
+- Fixed HTTP User-Agent header for ZSI.
+
+7.3.0:
+- Added support for new AdParamService.
+- Added support for reusing ZSI objects.
+- Added support for limitType in "Errors.DetailError" class (Fixes issue 90).
+- Added support for returning raw XML response, instead of unpacked
+  tuple (Fixes issue 91).
+- Enabled the validateOnly SOAP header feature.
+- Patch for re-raising ImportError, if one of the library's required modules is
+  missing.
+- Fix for method name and description in "tests/geo_loation_service_unittest.py"
+  (Fixes issue 88).
+- Fixed User-Agent HTTP header so that it gets picked up by the server.
+- Fixed sanity check for exempting requests (Fixes issue 92).
+- Moved code examples from "demo/" to "examples/". Included additional code
+  examples for v200909.
+
+7.2.0:
+- Added support for v200909.
+- Added support for new ad types in AdGroupAdService.
+- Added support for validateOnly SOAP header. At the moment, this feature is
+  disabled.
+- Added a way to return last call's number of units and operations consumed.
+- Added GetMethodCost() in "aw_api/Utils.py" to caclulate method's cost.
+- Added support for logging service and operator names in "request_info.log".
+- Added local catch for errors triggered due to incompatibility between version
+  and class.
+- Added catch for unsupported ZSI v2.1.0 (issue 84).
+- Added support for generating classes from local WSDLs, if remote ones are not
+  available.
+- Minor fix for identifying HTML response and extracting the fault.
+- Updated "scripts/get_wsdl_services.py" for easier management of services
+  under different groups and versions.
+- Added author tags to all sources.
+- Updated "aw_api/data/ops_rates.csv" to add rates for new methods.
+- Added validator to ideantify mismatch between SOAP headers and server that is
+  being used.
+- Re grouped unit tests per version for easier management.
+- Added script to pack client library into a .tar.gz ball.
+
+7.1.0:
+- Modified the way xxx.Type elements are handled in faults.
+- Added support for "isRuntimeException" element of the fault in
+  "aw_api/Errors.py". Fixed up "DetailError.__call__".
+- Fixed estimation of a single keyword using SOAPpy (Fixes issue 82). Added unit
+  test.
+- Minor fix to the ClientLogin's data key.
+- Added support for connecting through HTTP proxy via ZSI.
+- Patched DecodeNonASCIIText() in "aw_api/Utils.py" to not decode a unicode
+  string.
+- Minor fix to script for fetching ops rates.
+- Minor fix to the way fault element is extracted from API response via v2009.
+- Added support for raising more specific errors, when v2009 is in use.
+
+7.0.1:
+- Fix for applications that work on App Engine.
+- Fix for "useragent" header when in use with SOAPpy.
+- Fix for campaign id in "demo/schedule_campaign_report.py" demo.
+
+7.0.0:
+- Added support for v200906 and removed support for v200902.
+- Added a way to sync version in library with the one in the pickle.
+- Added "isFault" parameter in the request info log.
+- Implemented an easier way to switch between API versions. Service
+  instantiations and actual calls do not have to appear in a specific order
+  anymore. Updated unit tests.
+- Fix for "NonteType" error in traceback.print_exc().
+- Set default SOAP library to ZSI.
+- Renamed config's "units_log" to "request_log".
+- Added support for "userAgent" header.
+
+6.1.0:
+- Fix for existing CSV data files. Added more CSV data files. Added unit tests.
+- Minor modification to the way errors are handled in "aw_api/WebService".
+- Added pretty-print support for ElementTree XML parser (Fixes issue 72).
+- Integrated patch from AppEngine demo.
+- Added script to fetch codes in "scripts/codes_fetcher.py".
+- Added "aw_api/Buffer" class, a base class for "aw_api/SoapBuffer".
+
+6.0.1:
+- Minor fix to change default XML parser in SoapBuffer.
+
+6.0.0:
+- Added support for v200902. Added/updated unit tests.
+- Added support to parse SOAP XML using ElementTree library.
+- Added examlpe in "demo/" that shows how to use v13 and v200902 together.
+- Added option in "aw_api.SoapBuffer" to pretty-print XML documents. This is
+  enabled by default.
+- Fixed logging in "aw_api.WebService.__ManageSoap(), where it was creating
+  excessive number of log handlers for multiple requests in a single Client
+  instance.
+- Added more error classes in aw_api.Errors.
+- Updated the way logging is done and errors are handled.
+
+5.1.0:
+- Fix for namespace in report job and traffic estimator objects.
+- Fix for catching stackTrace element in Errors and empty error message.
+
+5.0.0:
+- Removed support for v12.
+- Added subclasses for ApiError and switched to raise more specific API
+  errors (issue# 54).
+- Added additional debugging with extra traceback info.
+- Added real setup script, "setup.py" (issue# 66).
+- Added "scripts/clear_it.py" script for "clearing" Sandbox account.
+- Added a "Step-by-step guide for accessing Sandbox" to the README file.
+- Added couple of useful functions in "aw_api/Utils" for parsing URLs.
+- Moved "aw_api/zsi_toolkit/gen_wsdl_services.py" script to "scripts/"
+  directory.
+- Renamed old "setup.py" script to "aw_api_config.py" (issue# 66).
+- Renamed config's "lib_home" to "home".
+- Renamed config's "lib_log_home" to "log_home".
+- Renamed "tests/all_tests.py" to "tests/alltests.py" and reworked it.
+- Modified the way Python version is checked in "aw_api/SoapBuffer.py"
+  (issue# 67).
+- Fixed logging feature to separate debugging from logging.
+- Changed default directory for pickles and logs.
+- Additional code cleanup to comply with lint.
+
+4.3.1:
+- Minor fixes and more code cleanup.
+
+4.3.0:
+- Fixed logging.shutdown() bug (issue# 60). Added a unit test.
+- Set MIN_API_VERSION to v13 (issue# 61).
+- Random code cleanup.
+- Prep work for creating subclasses of Errors.ApiError (issue# 54).
+
+4.2.0:
+- Added hook into the SoapBuffer for debugging local XML data.
+- Fixed unsupported 'stacktrace' element in Errors.DetailError (issue# 58) and
+  added a unit test.
+- Moved hardcoded XML examples into aw_api/data/.
+- Added debugging mode for aw_api/ReportService.DownloadCsvReport() to test and
+  debug local reports.
+- Fixed support for downloading CSV reports with data that contains non-ASCII
+  characters (issue# 57).
+- Exposed 'use_strict' on aw_api/Client to allow multiple strictness levels of
+  validation.
+- Exposed 'access' on aw_api/Client to add a hook into the URL.
+
+4.1.0:
+- Fixed type of contentTargeting in v13, when in use with SOAPpy (issue# 51).
+- A workaround for users of python2.5 (and up), which allows usage of
+  PyXML (issue# 52).
+
+4.0.0:
+- Modified footer in the docs to remove timestamp, which changes with each
+  re generation of the docs.
+- Always insert latest lib name and version into useragent (issue# 47).
+- Converted SoapBuffer.__GetFaultAsDict() from being a private to public
+  function.
+- Updated Errors.ApiError to better handle error details (issue# 13). The old
+  version of Errors.ApiError was renamed to Errors.ApiAsStrError class. Added
+  unit tests.
+- Fixed empty list of excludedCities issue, when using v13 (issue# 48). Added
+  unit tests.
+- Updated default useragent.
+
+3.3.1:
+- Fix for IDLE on sys.stdout retore (issue# 43).
+- Updated data files in aw_api/data.
+
+3.3.0:
+- Added support for v13.
+- Updated aw_api/zsi_toolkit/get_wsdl_service.py script to automatically create
+  new directory for when new API version is added.
+- Updated tests/all_tests.py to automatically pick up new tests.
+- Fixed empty list issue in CustomerPackList() (issue# 41). Added unit test.
+
+3.2.0:
+- Encapsulated thread-locked processing of WebService into try/finally, to
+  prevent deadlocks.
+
+3.1.0:
+- Added support to call API method directly, while using ZSI (issue# 31).
+- Added support for unicode strings wherever normal strings are accepted. The
+  SanityCheck.ValidateTypes() was extended to accept a list of supported types
+  for each variable (issue# 39).
+- Auto-check minimum version requirements for PyXML (issue# 40).
+- Added fix for when clientEmail is same as clientCustomerId (issue# 27).
+
+3.0.2:
+- Minor doc change.
+
+3.0.1:
+- Minor fix to comments.
+
+3.0.0:
+- Removed support for v11. Increased MIN_API_VERSION to v12 (issue# 36).
+- Added support for thread safety (issue# 33).
+- Matched response objects between SOAPpy and ZSI (issue# 35).
+- Fixed "NoteType object has no attributes 'endswith'" problem (issue# 37).
+- Extended regexp for HTML encoder (issue# 38).
+- Started removing version dependent code, to allow easier upgrades between
+  versions (issue# 34).
+
+2.0.0:
+- Support for ZSI web services toolkit (issue# 10).
+- Auto-check minimum version requirements for SOAPpy and ZSI (issue# 24).
+- Authentication and configuration data is now stored in .pkl files (issue# 21).
+- Support for shared library (issue# 20).
+- Exposed soap_lib on Client to allow dynamic choosing of the SOAP framework to
+  use.
+- Fixed support for proximity targets (issue# 25).
+- Missing configuration values are now set to default values.
+- Improved support for catching errors.
+- Switched to using standard logging module (issue# 7).
+- Fixed carriage return problem (issue# 28).
+- Fixed clientEmail key problem (issue# 30).
+- Fixed "is not" problem in IsClientIdSet (issue# 32).
+- Converted global variables into class variables.
+
+1.1.0:
+- Extended Client to allow config data to be configured through
+  dict (issue# 17).
+- Exposed use_mcc as bool flag on Client (issue# 18).
+- Updated operation rates in lib/data/ops_rates.csv (issue# 16).
+- Exposed debug as bool flag on Client (issue# 22).
+- Added Errors.ApiError class to handle AdWords API errors (issue# 13).
+
+1.0.0:
+- Removed support for v10.
+- Increased MIN_API_VERSION to v11.
+- Added support for v12.
+- Changed the way SoapBuffer.IsSoap() catches non-valid messages, the incoming
+  message should be inspected rather than outgoing (issue# 11).
+- Edited pattern search in Utils.GetErrorFromHtml() to also respect <TITLE>
+  (issue# 11).
+- HTTP proxy can now be set in the client code.
+- The clientEmail and clientCustomerId headers are now respected during service
+  instantiation when sub-account level access is used (issue# 15).
+- The control of error handling was passed to end user (issue# 14). Patch for a
+  fix provided by Don (donspauldingii).
+- Support for non-ASCII characters (issue# 12).
+
+0.6.2:
+- Updated version in setup.py.
+- Fixed comments in SoapBuffer.__GetDumpValue().
+- Added comment to tests/all_tests.py.
+
+0.6.1:
+- Minor fix in the docs.
+
+0.6.0:
+- Deprecated TODO file, tasks were added as feature requests to
+  http://code.google.com/p/google-api-adwords-python-lib/issues/list.
+- Added support for changing client customer id, SetClientCustomerId().
+- Added script, tests/all_tests.py, that runs all existing unit
+  tests (issue #8).
+- Optimized the way SoapBuffer class handles buffer data. It will now parse
+  buffer just once when extracting SOAP messages.
+- Bug fix to handle and report HTTP errors like 502s (issue# 11) w/ unit test.
+  Added method, utils/GetErrorFromHtml(), to extract error messages from HTML
+  page (i.e. 502 errors).
+- Fixed up testUpdateCampaignList() in tests/campaign_service_unittest.py.
+- Updated dates in tests/info_service_unittest.py.
+- Fixed up testValidateReportJobStructure() in tests/report_service_unittest.py.
+- Simplified the way service URL is constructed (i.e. '/'.join()).
+
+0.5.0:
+- Bug fix to allow clearing of auth data when auth.ini is missing (issue# 2).
+- Added support for win32 os (issue# 1).
+- Unit tests which used failUnlessRaises() were changed to catch SystemExit
+  instead of Exception, it was failing on win32.
+- Bug fix to HTML encode characters like '&' and '<' (issue# 3) w/ unit tests.
+- Bug fix to update ads for real in UpdateAds() (issue# 4).
+- Renamed SiteTrafficEstimatorServiceTest class to TrafficEstimatorServiceTest
+  in traffic_estimator_service_unittest.py.
+
+0.4.1:
+- Minor wording fix.
+
+0.4.0:
+- Two new methods added into Client class: GetAuthCredentials() and
+  GetConfigValues().
+- Added unit test for WebService class.
+- Separated managing of SOAP XML messages, in WebService class, into its own
+  method.
+- Added support for posting raw SOAP XML messages, with unit test and demo.
+- Updated copyright year.
+
+0.3.0:
+- Fixed the way methods in Utils.py retrieve data.
+- Added methods to retrieve API usage details, with unit tests.
+- Separated error reporting into its own layer.
+
+0.2.0:
+- Enabled storing and reporting of API units and operations consumed by a given
+  Client instance.
+- Added schedule_report.py demo.
+- Added more unit tests.
+- Fixed reporting of non-SOAP errors.
+- Masked out login password for outgoing SOAP message, beforing logging it or
+  sending it to STDOUT in debug mode.
+
+0.1.1:
+- Enabled unit test for testScheduleDefinedReportJob().
+- Chnanged shebang line to support non-python2.4 users.
+
+0.1.0:
+- Initial release of the AdWords API Python Client Library.
+

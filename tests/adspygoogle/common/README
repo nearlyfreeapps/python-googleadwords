@@ -1,0 +1,6 @@
+Unit tests to use with the client library's common module. The appropriate unit
+test should be executed whenever you make changes to any of the core library's
+sources.
+
+By default, all unit tests are (and should be) executed against the sandbox
+environment.
